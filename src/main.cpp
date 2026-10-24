@@ -42,8 +42,13 @@ void migrateFromOldPlugin(const QString &pluginUID) {
 		settings.setValue("globalSettings", oldSettings.value("globalSettings"));
 	}
 
+#ifdef Q_OS_MACOS
+	// <plugins dir>/<plugin>.sdPlugin/bin/<exe>.app/Contents/MacOS/<exe>
+	const QDir pluginsDir(QCoreApplication::applicationDirPath() + "/../../../../..");
+#else
 	// <plugins dir>/<plugin>.sdPlugin/bin/<exe>
 	const QDir pluginsDir(QCoreApplication::applicationDirPath() + "/../..");
+#endif
 	const QString oauthFile = pluginsDir.absoluteFilePath(pluginUID + ".sdPlugin/discordOauth.json");
 	const QString oldOauthFile = pluginsDir.absoluteFilePath(oldPluginUID + ".sdPlugin/discordOauth.json");
 	if(!QFile::exists(oauthFile) && QFile::exists(oldOauthFile) && QFile::copy(oldOauthFile, oauthFile))

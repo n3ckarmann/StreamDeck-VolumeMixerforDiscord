@@ -188,6 +188,7 @@
   "SDKVersion": 2,
   "Author": "n3ckarmann",
   "CodePathWin": "bin/streamdeck-volumemixer.exe",
+  "CodePathMac": "bin/streamdeck-volumemixer.app/Contents/MacOS/streamdeck-volumemixer",
   "Description": "Control your Discord voice chat from the Stream Deck: change the volume of every person in your voice channel, mute them, see who is speaking, and toggle your own microphone and deafen. Works great with the dials of the Stream Deck +.",
   "Category": "Volume Mixer for Discord",
   "CategoryIcon": "icons/category",
@@ -226,6 +227,10 @@
     {
       "Platform": "windows",
       "MinimumVersion": "10"
+    },
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
     }
   ],
   "Software": {
