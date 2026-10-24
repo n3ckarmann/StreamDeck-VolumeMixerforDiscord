@@ -221,6 +221,11 @@
       "Name": "Volume Mixer for Discord+",
       "DeviceType": 7,
       "ReadOnly": false
+    },
+    {
+      "Name": "Volume Mixer for Discord Neo",
+      "DeviceType": 9,
+      "ReadOnly": false
     }
   ],
   "OS": [

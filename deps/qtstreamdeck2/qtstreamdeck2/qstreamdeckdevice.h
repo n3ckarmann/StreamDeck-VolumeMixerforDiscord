@@ -20,6 +20,8 @@ public:
 		streamDeckPedal,
 		corsairVoyager,
 		streamDeckPlus,
+		scufController,
+		streamDeckNeo,
 	};
 
 	Q_ENUM(DeviceType);
