@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "用 Stream Deck 控制 Discord 语音聊天：调整语音频道中每个人的音量、将其静音、查看谁在说话，并切换自己的麦克风和拒听。非常适合 Stream Deck + 的旋钮。",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "打开当前 Discord 语音频道的音量混音器"
   },
   "cz.danol.discordmixer.back": {

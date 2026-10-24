@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "Steuere deinen Discord-Sprachchat mit dem Stream Deck: Lautstärke jeder Person im Sprachkanal ändern, Personen stummschalten, sehen wer spricht, und dein eigenes Mikrofon und den Ton schalten. Ideal mit den Drehreglern des Stream Deck +.",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "Öffnet den Lautstärkemixer für deinen aktuellen Discord-Sprachkanal"
   },
   "cz.danol.discordmixer.back": {

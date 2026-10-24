@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "Bedien je Discord-spraakchat vanaf het Stream Deck: pas het volume van iedereen in het spraakkanaal aan, demp mensen, zie wie er praat en schakel je eigen microfoon en geluid. Ideaal met de draaiknoppen van het Stream Deck +.",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "Opent de volumemixer voor je huidige Discord-spraakkanaal"
   },
   "cz.danol.discordmixer.back": {

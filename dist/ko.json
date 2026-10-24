@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "Stream Deck에서 Discord 음성 채팅을 제어하세요. 음성 채널의 각 사람 볼륨 조절, 음소거, 말하는 사람 확인, 내 마이크와 헤드셋 음소거 전환이 가능합니다. Stream Deck + 다이얼과 함께 쓰기 좋습니다.",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "현재 Discord 음성 채널의 볼륨 믹서를 엽니다"
   },
   "cz.danol.discordmixer.back": {

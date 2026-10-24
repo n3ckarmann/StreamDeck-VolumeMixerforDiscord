@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="dist/icons/app_large@2x.png" width="128" alt="Discord Volume Mixer Icon">
+<img src="dist/icons/app_large@2x.png" width="128" alt="Volume Mixer for Discord Icon">
 
-# Discord Volume Mixer für Stream Deck
+# Volume Mixer for Discord – Stream-Deck-Plugin
 
 **Stell die Lautstärke jeder Person in deinem Discord-Sprachchat direkt am Stream Deck ein.**
 
@@ -26,7 +26,7 @@
 ## Installation
 
 1. Lade die neueste `.streamDeckPlugin`-Datei aus den [Releases](../../releases) herunter und doppelklicke sie.
-2. Leg die Aktion **Discord Volume Mixer** auf eine Taste.
+2. Leg die Aktion **Volume Mixer** auf eine Taste.
 3. Richte einmalig deine eigene Discord-App ein (dauert zwei Minuten), siehe unten.
 
 > **Du kommst vom Original-Plugin?** Diese Version ersetzt es direkt. Einstellungen, Client-ID/Secret und Layouts bleiben erhalten.
@@ -39,7 +39,7 @@ Discord erlaubt nur selbst registrierten Apps, deinen Sprachchat zu steuern. Des
    - Der Name ist egal, er darf aber **nicht das Wort „Discord“ enthalten** (das lehnt Discord ab).
 2. Füge unter **OAuth2** die Weiterleitung `http://localhost:1337/callback` hinzu und klicke auf **Save Changes**.
 3. Kopiere die **Client ID** und das **Client Secret** (siehst du nur *Reset Secret*, klick darauf).
-4. Füge beides in den Einstellungen der Discord-Volume-Mixer-Taste ein. Die Werte sind verdeckt, mit dem 👁 Auge kannst du sie anzeigen.
+4. Füge beides in den Einstellungen der Volume-Mixer-Taste ein. Die Werte sind verdeckt, mit dem 👁 Auge kannst du sie anzeigen.
 5. Drück die Taste und klicke im Discord-Fenster auf **Autorisieren**. Fertig!
 
 Behandle das Client Secret wie ein Passwort und gib es nicht weiter.
@@ -60,7 +60,7 @@ Behandle das Client Secret wie ein Passwort und gib es nicht weiter.
 | `WARTE AUF INTERNET` | Discord-Server nicht erreichbar (z. B. direkt nach dem Hochfahren) | Nichts, es verbindet sich automatisch |
 | `NIEMAND IM KANAL` | Du bist allein oder in keinem Sprachkanal | Einem Sprachkanal beitreten |
 
-Die Tasten **Discord Volume Mixer**, **Mikrofon** und **Ton aus** werden abgedunkelt, solange das Plugin nicht verbunden ist, und zeigen einen kurzen Status: rot `DISCORD AUS`, wenn Discord geschlossen ist, gelb beim Verbinden oder wenn du noch freigeben musst. Sobald du Discord startest, verbindet sich das Plugin innerhalb weniger Sekunden.
+Die Tasten **Volume Mixer**, **Mikrofon** und **Ton aus** werden abgedunkelt, solange das Plugin nicht verbunden ist, und zeigen einen kurzen Status: rot `DISCORD AUS`, wenn Discord geschlossen ist, gelb beim Verbinden oder wenn du noch freigeben musst. Sobald du Discord startest, verbindet sich das Plugin innerhalb weniger Sekunden.
 
 Achte außerdem darauf, dass Discord und die Stream-Deck-Software **ohne** Administratorrechte laufen.
 

@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "Steruj czatem głosowym Discorda ze Stream Decka: zmieniaj głośność każdej osoby na kanale głosowym, wyciszaj je, sprawdzaj, kto mówi, i przełączaj swój mikrofon oraz dźwięk. Idealne z pokrętłami Stream Deck +.",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "Otwiera mikser głośności bieżącego kanału głosowego Discord"
   },
   "cz.danol.discordmixer.back": {

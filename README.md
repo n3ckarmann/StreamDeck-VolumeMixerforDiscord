@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="dist/icons/app_large@2x.png" width="128" alt="Discord Volume Mixer icon">
+<img src="dist/icons/app_large@2x.png" width="128" alt="Volume Mixer for Discord icon">
 
-# Discord Volume Mixer for Stream Deck
+# Volume Mixer for Discord – Stream Deck plugin
 
 **Change the volume of every person in your Discord voice chat, right from your Stream Deck.**
 
@@ -26,7 +26,7 @@ English · [Deutsch](README.de.md)
 ## Installation
 
 1. Download the latest `.streamDeckPlugin` file from the [releases](../../releases) and double-click it.
-2. Put the **Discord Volume Mixer** action on a key.
+2. Put the **Volume Mixer** action on a key.
 3. Set up your own Discord app (once, takes two minutes) – see below.
 
 > **Coming from the original plugin?** This version replaces it in place: your settings, Client ID/secret and layouts are kept.
@@ -39,7 +39,7 @@ Discord only lets apps that you registered yourself control your voice chat, so 
    - Pick any name, but **don't use the word "Discord"** in it (Discord rejects that).
 2. Under **OAuth2**, add the redirect `http://localhost:1337/callback` and click **Save Changes**.
 3. Copy the **Client ID** and the **Client Secret** (click *Reset Secret* if you only see that button).
-4. Paste both into the settings of the Discord Volume Mixer key on your Stream Deck. They are hidden – click the 👁 eye to show them.
+4. Paste both into the settings of the Volume Mixer key on your Stream Deck. They are hidden – click the 👁 eye to show them.
 5. Press the key and click **Authorize** in the window Discord shows you. Done!
 
 Treat the Client Secret like a password and never share it.
@@ -60,7 +60,7 @@ Treat the Client Secret like a password and never share it.
 | `WAITING FOR INTERNET` | Discord's servers can't be reached (e.g. right after booting) | Nothing – it reconnects automatically |
 | `NOBODY IN VOICE` | You are alone or not in a voice channel | Join a voice channel |
 
-The **Discord Volume Mixer**, **Microphone** and **Deafen** keys are dimmed while the plugin is not connected and show a short status: red `DISCORD OFF` when Discord is closed, yellow while connecting or waiting for you to authorize. As soon as you start Discord, the plugin connects within a few seconds.
+The **Volume Mixer**, **Microphone** and **Deafen** keys are dimmed while the plugin is not connected and show a short status: red `DISCORD OFF` when Discord is closed, yellow while connecting or waiting for you to authorize. As soon as you start Discord, the plugin connects within a few seconds.
 
 Also make sure Discord and the Stream Deck software both run **without** administrator rights.
 
@@ -94,7 +94,7 @@ This plugin was created by **[Danol (Daniel Čejchan)](https://github.com/CZDano
 - **Jan** – maintainer of this fork
 - Built with [Qt 6](https://www.qt.io/) (LGPLv3)
 
-Icons and app icon were made for this fork and are part of the project (GPLv3).
+Icons and app icon were made for this fork and are part of the project (GPLv3). This project is not affiliated with Discord; "for Discord" only describes what it works with.
 
 ## License
 

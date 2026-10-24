@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "Contrôlez votre chat vocal Discord depuis le Stream Deck : réglez le volume de chaque personne du salon vocal, coupez-les, voyez qui parle et activez ou coupez votre micro et votre son. Idéal avec les boutons rotatifs du Stream Deck +.",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "Ouvre le mixeur de volume de votre salon vocal Discord actuel"
   },
   "cz.danol.discordmixer.back": {

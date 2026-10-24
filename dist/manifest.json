@@ -2,7 +2,7 @@
   "Actions": [
     {
       "Icon": "icons/app",
-      "Name": "Discord Volume Mixer",
+      "Name": "Volume Mixer",
       "States": [
         {
           "Image": "icons/app",
@@ -158,7 +158,8 @@
       ],
       "Tooltip": "Mutes/unmutes your microphone in Discord",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.microphone"
+      "UUID": "cz.danol.discordmixer.microphone",
+      "DisableAutomaticStates": true
     },
     {
       "Icon": "icons/audio_off",
@@ -175,16 +176,17 @@
       ],
       "Tooltip": "Mutes/unmutes all Discord audio for you (deafen)",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.deafen"
+      "UUID": "cz.danol.discordmixer.deafen",
+      "DisableAutomaticStates": true
     }
   ],
   "SDKVersion": 2,
   "Author": "Danol & contributors",
   "CodePathWin": "bin/streamdeck-discordmixer.exe",
   "Description": "Control your Discord voice chat from the Stream Deck: change the volume of every person in your voice channel, mute them, see who is speaking, and toggle your own microphone and deafen. Works great with the dials of the Stream Deck +.",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "CategoryIcon": "icons/category",
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Icon": "icons/app_large",
   "URL": "https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2",
   "Version": "2.1.0.0",

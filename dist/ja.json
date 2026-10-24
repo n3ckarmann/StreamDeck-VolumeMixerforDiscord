@@ -1,9 +1,9 @@
 {
-  "Name": "Discord Volume Mixer",
+  "Name": "Volume Mixer for Discord",
   "Description": "Stream Deck から Discord のボイスチャットを操作できます。ボイスチャンネルの各メンバーの音量調整やミュート、発言中の表示、自分のマイクとスピーカーミュートの切り替えが可能です。Stream Deck + のダイヤルに最適です。",
-  "Category": "Discord Volume Mixer",
+  "Category": "Volume Mixer for Discord",
   "cz.danol.discordmixer.openmixer": {
-    "Name": "Discord Volume Mixer",
+    "Name": "Volume Mixer",
     "Tooltip": "現在の Discord ボイスチャンネルの音量ミキサーを開きます"
   },
   "cz.danol.discordmixer.back": {
