@@ -101,6 +101,9 @@ protected:
 protected:
 	virtual QStreamDeckDevice *createDevice() = 0;
 
+	/// Returns the device with the given context, creating it if Stream Deck hasn't announced it yet
+	QStreamDeckDevice *ensureDevice(const QStreamDeckDeviceContext &deviceContext, const QJsonObject &deviceInfo = {});
+
 private slots:
 	void onWebSocketTextMessageReceived(const QString &text);
 	void onSoftwareMessageReceived(const QJsonObject &message);
@@ -116,6 +119,7 @@ private:
 private:
 	QWebSocket websocket_;
 	QList<QString> messageQueue_; /// Messages to be sent once the socket is connected
+	bool wasConnected_ = false;
 
 private:
 	QJsonObject globalSettings_;

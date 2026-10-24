@@ -6,6 +6,7 @@
 #include <QMetaEnum>
 #include <QBuffer>
 #include <QImage>
+#include <QTimer>
 
 #include "qstreamdeckdevice.h"
 #include "qstreamdeckaction.h"
@@ -23,8 +24,24 @@ QStreamDeckPlugin::QStreamDeckPlugin() {
 	connect(&websocket_, QOverload<QAbstractSocket::SocketError>::of(&QWebSocket::error), [this](QAbstractSocket::SocketError e) {
 		qWarning() << "Websocket error: " << websocket_.errorString();
 	});
+	connect(&websocket_, &QWebSocket::disconnected, this, [this] {
+		// Stream Deck closed the connection (quitting or restarting) -> quit, it starts the plugin again when needed.
+		// Otherwise we would keep running without being connected, with keys that do nothing.
+		if(wasConnected_) {
+			qWarning() << "Disconnected from Stream Deck, quitting";
+			QCoreApplication::quit();
+			return;
+		}
+
+		// Right after booting, the Stream Deck software can start the plugin before it accepts connections -> try again
+		qWarning() << "Could not connect to Stream Deck, retrying";
+		QTimer::singleShot(1000, this, [this] {
+			websocket_.open(QStringLiteral("ws://localhost:%1").arg(port_));
+		});
+	});
 	connect(&websocket_, &QWebSocket::connected, this, [this] {
 		qDebug() << "Connected to Stream Deck";
+		wasConnected_ = true;
 		for(const auto &msg: messageQueue_)
 			websocket_.sendTextMessage(msg);
 
@@ -144,14 +161,14 @@ void QStreamDeckPlugin::onEventReceived(const QStreamDeckEvent &e) {
 	switch(e.eventType) {
 
 		case ET::deviceDidConnect: {
-			auto device = std::unique_ptr<QStreamDeckDevice>(createDevice());
-			device->init(this, deviceContext, e.json["deviceInfo"].toObject());
-			devices_.insert_or_assign(deviceContext, std::move(device));
+			// The device might already exist (actions appeared before the device was announced, or it reconnected).
+			// Only update its info then: replacing it would drop its actions, and Stream Deck doesn't send willAppear for them again.
+			ensureDevice(deviceContext, e.json["deviceInfo"].toObject());
 			return;
 		}
 
 		case ET::deviceDidDisconnect: {
-			devices_.erase(deviceContext);
+			// Keep the device: its actions get willDisappear on their own, and the device might come back
 			return;
 		}
 
@@ -178,13 +195,10 @@ void QStreamDeckPlugin::onEventReceived(const QStreamDeckEvent &e) {
 	}
 
 	if(!deviceContext.isEmpty()) {
-		const auto dit = devices_.find(deviceContext);
-		if(dit != devices_.end()) {
-			emit dit->second->eventReceived(e);
-			return;
-		}
-		else
-			qWarning() << "QtStreamDeck error: Expected device " << deviceContext << "to exist.";
+		// After booting, Stream Deck can send willAppear before deviceDidConnect. Dropping those events would leave
+		// the keys without an action (they do nothing and the property inspector never loads) until they are placed again.
+		emit ensureDevice(deviceContext)->eventReceived(e);
+		return;
 	}
 
 	if(const QStreamDeckActionContext actionContext = e.json["context"].toString(); !actionContext.isEmpty()) {
@@ -196,4 +210,16 @@ void QStreamDeckPlugin::onEventReceived(const QStreamDeckEvent &e) {
 		else
 			qWarning() << "QtStreamDeck error: Expected action " << actionContext << "to exist.";
 	}
+}
+
+QStreamDeckDevice *QStreamDeckPlugin::ensureDevice(const QStreamDeckDeviceContext &deviceContext, const QJsonObject &deviceInfo) {
+	auto dit = devices_.find(deviceContext);
+	if(dit == devices_.end()) {
+		dit = devices_.emplace(deviceContext, std::unique_ptr<QStreamDeckDevice>(createDevice())).first;
+		dit->second->init(this, deviceContext, deviceInfo);
+	}
+	else if(!deviceInfo.isEmpty())
+		dit->second->init(this, deviceContext, deviceInfo);
+
+	return dit->second.get();
 }
