@@ -6,6 +6,10 @@
 
 Coming from the old plugin? Install this one while the old one is still installed: your Client ID, secret and Discord login are taken over. Then remove the old plugin.
 
+### Fixed in 2.1.1
+
+- The plugin can be installed on Windows again (2.1.0 stopped with an extraction error because of the macOS part of the file)
+
 ### New since the original (2.0.x)
 
 _Setting up the Discord app is explained step by step in the [README](https://github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord#setting-up-the-discord-app)._
@@ -41,6 +45,8 @@ xattr -dr com.apple.quarantine ~/Library/Application\ Support/com.elgato.StreamD
 ---
 
 ### Neu seit dem Original (Kurzfassung auf Deutsch)
+
+- 2.1.1: Das Plugin lässt sich unter Windows wieder installieren (2.1.0 brach beim Entpacken ab)
 
 - macOS-Unterstützung, Profile für Stream Deck **Neo** (mit Infobar „Wer spricht“) und **+ XL**
 - Verbindung zu Discord repariert: kein Hängen mehr, keine Dauer-Abfrage zum Autorisieren, Login bleibt beim Start ohne Internet erhalten, Tasten zeigen den Verbindungsstatus

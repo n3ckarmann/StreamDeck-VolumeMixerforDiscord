@@ -90,8 +90,10 @@ jobs:
           for f in parts/*/com.n3ckarmann.volumemixer.streamDeckPlugin; do unzip -qo "$f" -d combined; done
           test -f combined/com.n3ckarmann.volumemixer.sdPlugin/bin/streamdeck-volumemixer.exe
           test -f combined/com.n3ckarmann.volumemixer.sdPlugin/bin/streamdeck-volumemixer.app/Contents/MacOS/streamdeck-volumemixer
+          # Stream Deck for Windows aborts the install on symlink entries
+          if [ -n "$(find combined -type l)" ]; then find combined -type l; exit 1; fi
           mkdir release
-          (cd combined && zip -qry ../release/com.n3ckarmann.volumemixer.streamDeckPlugin com.n3ckarmann.volumemixer.sdPlugin)
+          (cd combined && zip -qr ../release/com.n3ckarmann.volumemixer.streamDeckPlugin com.n3ckarmann.volumemixer.sdPlugin)
 
       - name: Upload plugin
         uses: actions/upload-artifact@v4
