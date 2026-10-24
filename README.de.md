@@ -29,7 +29,7 @@
 2. Leg die Aktion **Volume Mixer** auf eine Taste.
 3. Richte einmalig deine eigene Discord-App ein (dauert zwei Minuten), siehe unten.
 
-> **Du kommst vom Original-Plugin?** Diese Version ersetzt es direkt. Einstellungen, Client-ID/Secret und Layouts bleiben erhalten.
+> **Du kommst von Danols ursprünglichem Discord Volume Mixer?** Installiere dieses Plugin, **bevor** du das alte entfernst: Beim ersten Start übernimmt es Client-ID, Secret und Discord-Anmeldung, du musst nichts neu einrichten. Danach das alte Plugin deinstallieren und die Tasten einmal neu aufs Stream Deck ziehen (Stream Deck sieht das als neues Plugin).
 
 ## Discord-App einrichten
 
@@ -66,7 +66,7 @@ Achte außerdem darauf, dass Discord und die Stream-Deck-Software **ohne** Admin
 
 ### Log senden
 
-Leg eine leere Datei `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\cz.danol.discordmixer.sdPlugin\` an, wiederhole das Problem und hänge die Datei an ein [Issue](../../issues) an. Lösch sie danach wieder, sie wächst sonst immer weiter.
+Leg eine leere Datei `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ckarmann.volumemixer.sdPlugin\` an, wiederhole das Problem und hänge die Datei an ein [Issue](../../issues) an. Lösch sie danach wieder, sie wächst sonst immer weiter.
 
 ## Selbst bauen
 
@@ -78,7 +78,7 @@ Erfunden und gebaut hat dieses Plugin **[Danol (Daniel Čejchan)](https://github
 
 - **Danol** – ursprünglicher Autor
 - **[Krabs](https://github.com/krabs-github)** – Profile für das XL und Tests des Original-Plugins
-- **Jan** – Maintainer dieses Forks
+- **n3ckarmann** – Maintainer dieses Forks
 - Gebaut mit [Qt 6](https://www.qt.io/) (LGPLv3)
 
 Icons und App-Icon wurden für diesen Fork neu gestaltet und sind Teil des Projekts (GPLv3).

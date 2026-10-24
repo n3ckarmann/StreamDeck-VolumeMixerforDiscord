@@ -68,7 +68,7 @@ void Action_VCMPaging::onInitialized() {
 	if(const auto v = setting("step"); v.isString())
 		setSetting("step", v.toString().toInt());
 
-	isBackButton_ = (actionUID() == "cz.danol.discordmixer.previouspage");
+	isBackButton_ = (actionUID() == "com.n3ckarmann.volumemixer.previouspage");
 	(isBackButton_ ? device()->vcmPrevPageButtonCount : device()->vcmNextPageButtonCount)++;
 }
 

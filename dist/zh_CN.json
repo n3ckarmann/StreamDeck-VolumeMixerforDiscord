@@ -2,39 +2,39 @@
   "Name": "Volume Mixer for Discord",
   "Description": "用 Stream Deck 控制 Discord 语音聊天：调整语音频道中每个人的音量、将其静音、查看谁在说话，并切换自己的麦克风和拒听。非常适合 Stream Deck + 的旋钮。",
   "Category": "Volume Mixer for Discord",
-  "cz.danol.discordmixer.openmixer": {
+  "com.n3ckarmann.volumemixer.openmixer": {
     "Name": "Volume Mixer",
     "Tooltip": "打开当前 Discord 语音频道的音量混音器"
   },
-  "cz.danol.discordmixer.back": {
+  "com.n3ckarmann.volumemixer.back": {
     "Name": "返回",
     "Tooltip": "关闭音量混音器"
   },
-  "cz.danol.discordmixer.user": {
+  "com.n3ckarmann.volumemixer.user": {
     "Name": "语音频道成员",
     "Tooltip": "显示语音频道中的一位成员——按下可静音，转动旋钮可调节音量"
   },
-  "cz.danol.discordmixer.volumeup": {
+  "com.n3ckarmann.volumemixer.volumeup": {
     "Name": "音量增大",
     "Tooltip": "增大语音频道成员的音量"
   },
-  "cz.danol.discordmixer.volumedown": {
+  "com.n3ckarmann.volumemixer.volumedown": {
     "Name": "音量减小",
     "Tooltip": "减小语音频道成员的音量"
   },
-  "cz.danol.discordmixer.nextpage": {
+  "com.n3ckarmann.volumemixer.nextpage": {
     "Name": "下一页",
     "Tooltip": "显示语音频道中的后续成员"
   },
-  "cz.danol.discordmixer.previouspage": {
+  "com.n3ckarmann.volumemixer.previouspage": {
     "Name": "上一页",
     "Tooltip": "显示语音频道中的前面成员"
   },
-  "cz.danol.discordmixer.microphone": {
+  "com.n3ckarmann.volumemixer.microphone": {
     "Name": "麦克风",
     "Tooltip": "在 Discord 中静音/取消静音麦克风"
   },
-  "cz.danol.discordmixer.deafen": {
+  "com.n3ckarmann.volumemixer.deafen": {
     "Name": "拒听",
     "Tooltip": "为你关闭/开启所有 Discord 声音"
   }

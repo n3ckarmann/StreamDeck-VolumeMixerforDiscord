@@ -2,39 +2,39 @@
   "Name": "Volume Mixer for Discord",
   "Description": "Steruj czatem głosowym Discorda ze Stream Decka: zmieniaj głośność każdej osoby na kanale głosowym, wyciszaj je, sprawdzaj, kto mówi, i przełączaj swój mikrofon oraz dźwięk. Idealne z pokrętłami Stream Deck +.",
   "Category": "Volume Mixer for Discord",
-  "cz.danol.discordmixer.openmixer": {
+  "com.n3ckarmann.volumemixer.openmixer": {
     "Name": "Volume Mixer",
     "Tooltip": "Otwiera mikser głośności bieżącego kanału głosowego Discord"
   },
-  "cz.danol.discordmixer.back": {
+  "com.n3ckarmann.volumemixer.back": {
     "Name": "Wstecz",
     "Tooltip": "Zamyka mikser głośności"
   },
-  "cz.danol.discordmixer.user": {
+  "com.n3ckarmann.volumemixer.user": {
     "Name": "Osoba na kanale głosowym",
     "Tooltip": "Pokazuje osobę z kanału głosowego – naciśnij, aby wyciszyć, obróć pokrętło, aby zmienić głośność"
   },
-  "cz.danol.discordmixer.volumeup": {
+  "com.n3ckarmann.volumemixer.volumeup": {
     "Name": "Głośniej",
     "Tooltip": "Zwiększa głośność osoby na kanale głosowym"
   },
-  "cz.danol.discordmixer.volumedown": {
+  "com.n3ckarmann.volumemixer.volumedown": {
     "Name": "Ciszej",
     "Tooltip": "Zmniejsza głośność osoby na kanale głosowym"
   },
-  "cz.danol.discordmixer.nextpage": {
+  "com.n3ckarmann.volumemixer.nextpage": {
     "Name": "Następna strona",
     "Tooltip": "Pokazuje kolejne osoby z kanału głosowego"
   },
-  "cz.danol.discordmixer.previouspage": {
+  "com.n3ckarmann.volumemixer.previouspage": {
     "Name": "Poprzednia strona",
     "Tooltip": "Pokazuje poprzednie osoby z kanału głosowego"
   },
-  "cz.danol.discordmixer.microphone": {
+  "com.n3ckarmann.volumemixer.microphone": {
     "Name": "Mikrofon",
     "Tooltip": "Wycisza/włącza twój mikrofon w Discordzie"
   },
-  "cz.danol.discordmixer.deafen": {
+  "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Wyłącz dźwięk",
     "Tooltip": "Wyłącza/włącza cały dźwięk Discorda"
   }

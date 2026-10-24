@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 # Builds with Qt 6.8 LTS, either MSVC 2022 or MinGW 13 (x64)
 
-project(streamdeck-discordmixer LANGUAGES CXX)
+project(streamdeck-volumemixer LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,7 +12,7 @@ option(BUILD_IN_STREAMDECK_PLUGINS_DIR "Whether to build to the 'bin' directory 
 # ===========================================
 # Target setup
 # ===========================================
-set(target streamdeck-discordmixer)
+set(target streamdeck-volumemixer)
 
 # Qt setup
 find_package(Qt6 COMPONENTS Core WebSockets Network Gui REQUIRED CONFIG)
@@ -20,9 +20,9 @@ set(CMAKE_AUTOMOC ON)
 
 if (BUILD_IN_STREAMDECK_PLUGINS_DIR)
     file(TO_CMAKE_PATH "$ENV{APPDATA}" appdata_path)
-    set(target_directory "${appdata_path}/Elgato/StreamDeck/Plugins/cz.danol.discordmixer.sdPlugin")
+    set(target_directory "${appdata_path}/Elgato/StreamDeck/Plugins/com.n3ckarmann.volumemixer.sdPlugin")
 else ()
-    set(target_directory "${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}/cz.danol.discordmixer.sdPlugin")
+    set(target_directory "${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}/com.n3ckarmann.volumemixer.sdPlugin")
 endif ()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${target_directory}/bin")

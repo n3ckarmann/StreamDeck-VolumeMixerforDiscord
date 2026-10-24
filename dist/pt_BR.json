@@ -2,39 +2,39 @@
   "Name": "Volume Mixer for Discord",
   "Description": "Controle seu chat de voz do Discord pelo Stream Deck: ajuste o volume de cada pessoa no canal de voz, silencie-as, veja quem está falando e ative ou desative seu microfone e o áudio. Ideal com os botões giratórios do Stream Deck +.",
   "Category": "Volume Mixer for Discord",
-  "cz.danol.discordmixer.openmixer": {
+  "com.n3ckarmann.volumemixer.openmixer": {
     "Name": "Volume Mixer",
     "Tooltip": "Abre o mixer de volume do seu canal de voz atual do Discord"
   },
-  "cz.danol.discordmixer.back": {
+  "com.n3ckarmann.volumemixer.back": {
     "Name": "Voltar",
     "Tooltip": "Fecha o mixer de volume"
   },
-  "cz.danol.discordmixer.user": {
+  "com.n3ckarmann.volumemixer.user": {
     "Name": "Membro do canal de voz",
     "Tooltip": "Mostra um membro do seu canal de voz – pressione para silenciar, gire o botão para mudar o volume"
   },
-  "cz.danol.discordmixer.volumeup": {
+  "com.n3ckarmann.volumemixer.volumeup": {
     "Name": "Aumentar volume",
     "Tooltip": "Aumenta o volume de um membro do canal de voz"
   },
-  "cz.danol.discordmixer.volumedown": {
+  "com.n3ckarmann.volumemixer.volumedown": {
     "Name": "Diminuir volume",
     "Tooltip": "Diminui o volume de um membro do canal de voz"
   },
-  "cz.danol.discordmixer.nextpage": {
+  "com.n3ckarmann.volumemixer.nextpage": {
     "Name": "Próxima página",
     "Tooltip": "Mostra os próximos membros do canal de voz"
   },
-  "cz.danol.discordmixer.previouspage": {
+  "com.n3ckarmann.volumemixer.previouspage": {
     "Name": "Página anterior",
     "Tooltip": "Mostra os membros anteriores do canal de voz"
   },
-  "cz.danol.discordmixer.microphone": {
+  "com.n3ckarmann.volumemixer.microphone": {
     "Name": "Microfone",
     "Tooltip": "Silencia/reativa seu microfone no Discord"
   },
-  "cz.danol.discordmixer.deafen": {
+  "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Desativar áudio",
     "Tooltip": "Desativa/reativa todo o áudio do Discord para você"
   }

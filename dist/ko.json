@@ -2,39 +2,39 @@
   "Name": "Volume Mixer for Discord",
   "Description": "Stream Deck에서 Discord 음성 채팅을 제어하세요. 음성 채널의 각 사람 볼륨 조절, 음소거, 말하는 사람 확인, 내 마이크와 헤드셋 음소거 전환이 가능합니다. Stream Deck + 다이얼과 함께 쓰기 좋습니다.",
   "Category": "Volume Mixer for Discord",
-  "cz.danol.discordmixer.openmixer": {
+  "com.n3ckarmann.volumemixer.openmixer": {
     "Name": "Volume Mixer",
     "Tooltip": "현재 Discord 음성 채널의 볼륨 믹서를 엽니다"
   },
-  "cz.danol.discordmixer.back": {
+  "com.n3ckarmann.volumemixer.back": {
     "Name": "뒤로",
     "Tooltip": "볼륨 믹서를 닫습니다"
   },
-  "cz.danol.discordmixer.user": {
+  "com.n3ckarmann.volumemixer.user": {
     "Name": "음성 채널 멤버",
     "Tooltip": "음성 채널 멤버를 표시합니다. 눌러서 음소거, 다이얼로 볼륨 조절"
   },
-  "cz.danol.discordmixer.volumeup": {
+  "com.n3ckarmann.volumemixer.volumeup": {
     "Name": "볼륨 높이기",
     "Tooltip": "멤버의 볼륨을 높입니다"
   },
-  "cz.danol.discordmixer.volumedown": {
+  "com.n3ckarmann.volumemixer.volumedown": {
     "Name": "볼륨 낮추기",
     "Tooltip": "멤버의 볼륨을 낮춥니다"
   },
-  "cz.danol.discordmixer.nextpage": {
+  "com.n3ckarmann.volumemixer.nextpage": {
     "Name": "다음 페이지",
     "Tooltip": "다음 멤버들을 표시합니다"
   },
-  "cz.danol.discordmixer.previouspage": {
+  "com.n3ckarmann.volumemixer.previouspage": {
     "Name": "이전 페이지",
     "Tooltip": "이전 멤버들을 표시합니다"
   },
-  "cz.danol.discordmixer.microphone": {
+  "com.n3ckarmann.volumemixer.microphone": {
     "Name": "마이크",
     "Tooltip": "Discord 마이크를 음소거/해제합니다"
   },
-  "cz.danol.discordmixer.deafen": {
+  "com.n3ckarmann.volumemixer.deafen": {
     "Name": "헤드셋 음소거",
     "Tooltip": "Discord 소리를 모두 끄거나 켭니다"
   }

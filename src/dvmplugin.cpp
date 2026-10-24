@@ -12,15 +12,15 @@
 #include "action/action_microphone.h"
 
 DVMPlugin::DVMPlugin() {
-	registerActionType<Action_OpenMixer>("cz.danol.discordmixer.openmixer");
-	registerActionType<Action_VCMInfo>("cz.danol.discordmixer.user");
-	registerActionType<Action_VCMVolume>("cz.danol.discordmixer.volumeup");
-	registerActionType<Action_VCMVolume>("cz.danol.discordmixer.volumedown");
-	registerActionType<Action_VCMPaging>("cz.danol.discordmixer.nextpage");
-	registerActionType<Action_VCMPaging>("cz.danol.discordmixer.previouspage");
-	registerActionType<Action_Back>("cz.danol.discordmixer.back");
-	registerActionType<Action_Microphone>("cz.danol.discordmixer.microphone");
-	registerActionType<Action_Deafen>("cz.danol.discordmixer.deafen");
+	registerActionType<Action_OpenMixer>("com.n3ckarmann.volumemixer.openmixer");
+	registerActionType<Action_VCMInfo>("com.n3ckarmann.volumemixer.user");
+	registerActionType<Action_VCMVolume>("com.n3ckarmann.volumemixer.volumeup");
+	registerActionType<Action_VCMVolume>("com.n3ckarmann.volumemixer.volumedown");
+	registerActionType<Action_VCMPaging>("com.n3ckarmann.volumemixer.nextpage");
+	registerActionType<Action_VCMPaging>("com.n3ckarmann.volumemixer.previouspage");
+	registerActionType<Action_Back>("com.n3ckarmann.volumemixer.back");
+	registerActionType<Action_Microphone>("com.n3ckarmann.volumemixer.microphone");
+	registerActionType<Action_Deafen>("com.n3ckarmann.volumemixer.deafen");
 
 	connect(this, &QStreamDeckPlugin::initialized, this, &DVMPlugin::onInitialized);
 	connect(this, &QStreamDeckPlugin::eventReceived, this, &DVMPlugin::onStreamDeckEventReceived);

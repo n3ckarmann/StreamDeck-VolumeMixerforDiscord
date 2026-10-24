@@ -13,13 +13,13 @@ void Action_OpenMixer::update() {
 void Action_OpenMixer::onPressed() {
 	using DT = QStreamDeckDevice::DeviceType;
 	static const QMap<int, QString> profileNameByDeviceType{
-		{+DT::streamDeck,       "Discord Volume Mixer"},
-		{+DT::streamDeckMini,   "Discord Volume Mixer Mini"},
-		{+DT::streamDeckXL,     "Discord Volume Mixer XL"},
-		{+DT::streamDeckMobile, "Discord Volume Mixer"},
-		{+DT::streamDeckPlus,   "Discord Volume Mixer+"},
+		{+DT::streamDeck,       "Volume Mixer for Discord"},
+		{+DT::streamDeckMini,   "Volume Mixer for Discord Mini"},
+		{+DT::streamDeckXL,     "Volume Mixer for Discord XL"},
+		{+DT::streamDeckMobile, "Volume Mixer for Discord"},
+		{+DT::streamDeckPlus,   "Volume Mixer for Discord+"},
 	};
 
-	device()->switchToProfile(profileNameByDeviceType.value(+device()->deviceType(), "Discord Volume Mixer"));
+	device()->switchToProfile(profileNameByDeviceType.value(+device()->deviceType(), "Volume Mixer for Discord"));
 	plugin()->updateChannelMembersData();
 }

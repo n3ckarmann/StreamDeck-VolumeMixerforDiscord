@@ -29,7 +29,7 @@ English · [Deutsch](README.de.md)
 2. Put the **Volume Mixer** action on a key.
 3. Set up your own Discord app (once, takes two minutes) – see below.
 
-> **Coming from the original plugin?** This version replaces it in place: your settings, Client ID/secret and layouts are kept.
+> **Coming from Danol's original Discord Volume Mixer?** Install this plugin **before** removing the old one: on its first start it takes over your Client ID, secret and Discord login, so you don't have to set anything up again. Then uninstall the old plugin and put the keys on your Stream Deck again (Stream Deck treats this as a new plugin).
 
 ## Setting up the Discord app
 
@@ -66,7 +66,7 @@ Also make sure Discord and the Stream Deck software both run **without** adminis
 
 ### Sending a log
 
-Create an empty file `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\cz.danol.discordmixer.sdPlugin\`, reproduce the problem and attach the file to an [issue](../../issues). Delete it afterwards, it keeps growing.
+Create an empty file `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ckarmann.volumemixer.sdPlugin\`, reproduce the problem and attach the file to an [issue](../../issues). Delete it afterwards, it keeps growing.
 
 ## Building from source
 
@@ -75,7 +75,7 @@ Requirements: Windows 10/11 x64, [Qt 6.8 LTS](https://www.qt.io/download-qt-inst
 ```powershell
 cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\Qt\6.8.3\mingw_64
 cmake --build build
-cmake --install build      # copies everything to bin\Release\cz.danol.discordmixer.sdPlugin and runs windeployqt
+cmake --install build      # copies everything to bin\Release\com.n3ckarmann.volumemixer.sdPlugin and runs windeployqt
 ```
 
 With `-DBUILD_IN_STREAMDECK_PLUGINS_DIR=ON` the plugin is built straight into your Stream Deck plugins folder.
@@ -91,7 +91,7 @@ This plugin was created by **[Danol (Daniel Čejchan)](https://github.com/CZDano
 
 - **Danol** – original author
 - **[Krabs](https://github.com/krabs-github)** – profiles for the XL and testing of the original plugin
-- **Jan** – maintainer of this fork
+- **n3ckarmann** – maintainer of this fork
 - Built with [Qt 6](https://www.qt.io/) (LGPLv3)
 
 Icons and app icon were made for this fork and are part of the project (GPLv3). This project is not affiliated with Discord; "for Discord" only describes what it works with.

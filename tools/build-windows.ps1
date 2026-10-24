@@ -2,7 +2,7 @@
 #
 #   .\tools\build-windows.ps1 -QtDir C:\Qt\6.8.3\mingw_64 [-MinGWDir C:\Qt\Tools\mingw1310_64] [-CMakeDir C:\Qt\Tools\CMake_64]
 #
-# The result is written to release\cz.danol.discordmixer.streamDeckPlugin.
+# The result is written to release\com.n3ckarmann.volumemixer.streamDeckPlugin.
 
 param(
     [Parameter(Mandatory = $true)][string]$QtDir,
@@ -13,7 +13,7 @@ param(
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $buildDir = Join-Path $root "build"
-$pluginDir = Join-Path $root "bin\Release\cz.danol.discordmixer.sdPlugin"
+$pluginDir = Join-Path $root "bin\Release\com.n3ckarmann.volumemixer.sdPlugin"
 $releaseDir = Join-Path $root "release"
 
 foreach ($dir in @($MinGWDir, $CMakeDir)) {
@@ -40,7 +40,7 @@ Invoke-Step "Install + windeployqt" { cmake --install $buildDir --config Release
 # Stream Deck expects a zip with the .sdPlugin folder at its root.
 # Compress-Archive (Windows PowerShell 5) writes backslashes into the entry names, so the zip is built by hand.
 New-Item -ItemType Directory -Path $releaseDir | Out-Null
-$target = Join-Path $releaseDir "cz.danol.discordmixer.streamDeckPlugin"
+$target = Join-Path $releaseDir "com.n3ckarmann.volumemixer.streamDeckPlugin"
 Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
 $archive = [System.IO.Compression.ZipFile]::Open($target, [System.IO.Compression.ZipArchiveMode]::Create)
 try {

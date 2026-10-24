@@ -2,39 +2,39 @@
   "Name": "Volume Mixer for Discord",
   "Description": "Steuere deinen Discord-Sprachchat mit dem Stream Deck: Lautstärke jeder Person im Sprachkanal ändern, Personen stummschalten, sehen wer spricht, und dein eigenes Mikrofon und den Ton schalten. Ideal mit den Drehreglern des Stream Deck +.",
   "Category": "Volume Mixer for Discord",
-  "cz.danol.discordmixer.openmixer": {
+  "com.n3ckarmann.volumemixer.openmixer": {
     "Name": "Volume Mixer",
     "Tooltip": "Öffnet den Lautstärkemixer für deinen aktuellen Discord-Sprachkanal"
   },
-  "cz.danol.discordmixer.back": {
+  "com.n3ckarmann.volumemixer.back": {
     "Name": "Zurück",
     "Tooltip": "Schließt den Lautstärkemixer"
   },
-  "cz.danol.discordmixer.user": {
+  "com.n3ckarmann.volumemixer.user": {
     "Name": "Person im Sprachkanal",
     "Tooltip": "Zeigt eine Person aus deinem Sprachkanal – drücken zum Stummschalten, Drehregler für die Lautstärke"
   },
-  "cz.danol.discordmixer.volumeup": {
+  "com.n3ckarmann.volumemixer.volumeup": {
     "Name": "Lauter",
     "Tooltip": "Macht eine Person im Sprachkanal lauter"
   },
-  "cz.danol.discordmixer.volumedown": {
+  "com.n3ckarmann.volumemixer.volumedown": {
     "Name": "Leiser",
     "Tooltip": "Macht eine Person im Sprachkanal leiser"
   },
-  "cz.danol.discordmixer.nextpage": {
+  "com.n3ckarmann.volumemixer.nextpage": {
     "Name": "Nächste Seite",
     "Tooltip": "Zeigt die nächsten Personen im Sprachkanal"
   },
-  "cz.danol.discordmixer.previouspage": {
+  "com.n3ckarmann.volumemixer.previouspage": {
     "Name": "Vorherige Seite",
     "Tooltip": "Zeigt die vorherigen Personen im Sprachkanal"
   },
-  "cz.danol.discordmixer.microphone": {
+  "com.n3ckarmann.volumemixer.microphone": {
     "Name": "Mikrofon",
     "Tooltip": "Schaltet dein Mikrofon in Discord stumm/an"
   },
-  "cz.danol.discordmixer.deafen": {
+  "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Ton aus",
     "Tooltip": "Schaltet den gesamten Discord-Ton für dich aus/an"
   }

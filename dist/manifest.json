@@ -12,7 +12,7 @@
       "SupportedInMultiActions": false,
       "Tooltip": "Opens the volume mixer for your current Discord voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.openmixer"
+      "UUID": "com.n3ckarmann.volumemixer.openmixer"
     },
     {
       "Icon": "icons/back",
@@ -24,7 +24,7 @@
         }
       ],
       "Tooltip": "Closes the volume mixer",
-      "UUID": "cz.danol.discordmixer.back"
+      "UUID": "com.n3ckarmann.volumemixer.back"
     },
     {
       "Icon": "icons/user",
@@ -59,7 +59,7 @@
       "UserTitleEnabled": false,
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "Tooltip": "Shows a member of your voice channel – press to mute, turn the dial to change the volume",
-      "UUID": "cz.danol.discordmixer.user",
+      "UUID": "com.n3ckarmann.volumemixer.user",
       "DisableAutomaticStates": true
     },
     {
@@ -77,7 +77,7 @@
       ],
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "Tooltip": "Makes a voice channel member louder",
-      "UUID": "cz.danol.discordmixer.volumeup",
+      "UUID": "com.n3ckarmann.volumemixer.volumeup",
       "DisableAutomaticStates": true
     },
     {
@@ -95,7 +95,7 @@
       ],
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "Tooltip": "Makes a voice channel member quieter",
-      "UUID": "cz.danol.discordmixer.volumedown",
+      "UUID": "com.n3ckarmann.volumemixer.volumedown",
       "DisableAutomaticStates": true
     },
     {
@@ -120,7 +120,7 @@
       "UserTitleEnabled": false,
       "Tooltip": "Shows the next members of the voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.nextpage",
+      "UUID": "com.n3ckarmann.volumemixer.nextpage",
       "DisableAutomaticStates": true
     },
     {
@@ -145,7 +145,7 @@
       "UserTitleEnabled": false,
       "Tooltip": "Shows the previous members of the voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.previouspage",
+      "UUID": "com.n3ckarmann.volumemixer.previouspage",
       "DisableAutomaticStates": true
     },
     {
@@ -163,7 +163,7 @@
       ],
       "Tooltip": "Mutes/unmutes your microphone in Discord",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.microphone",
+      "UUID": "com.n3ckarmann.volumemixer.microphone",
       "DisableAutomaticStates": true
     },
     {
@@ -181,13 +181,13 @@
       ],
       "Tooltip": "Mutes/unmutes all Discord audio for you (deafen)",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.deafen",
+      "UUID": "com.n3ckarmann.volumemixer.deafen",
       "DisableAutomaticStates": true
     }
   ],
   "SDKVersion": 2,
-  "Author": "Danol & contributors",
-  "CodePathWin": "bin/streamdeck-discordmixer.exe",
+  "Author": "n3ckarmann",
+  "CodePathWin": "bin/streamdeck-volumemixer.exe",
   "Description": "Control your Discord voice chat from the Stream Deck: change the volume of every person in your voice channel, mute them, see who is speaking, and toggle your own microphone and deafen. Works great with the dials of the Stream Deck +.",
   "Category": "Volume Mixer for Discord",
   "CategoryIcon": "icons/category",
@@ -197,27 +197,27 @@
   "Version": "2.1.0.0",
   "Profiles": [
     {
-      "Name": "Discord Volume Mixer",
+      "Name": "Volume Mixer for Discord",
       "DeviceType": 0,
       "ReadOnly": false
     },
     {
-      "Name": "Discord Volume Mixer",
+      "Name": "Volume Mixer for Discord",
       "DeviceType": 3,
       "ReadOnly": false
     },
     {
-      "Name": "Discord Volume Mixer XL",
+      "Name": "Volume Mixer for Discord XL",
       "DeviceType": 2,
       "ReadOnly": false
     },
     {
-      "Name": "Discord Volume Mixer Mini",
+      "Name": "Volume Mixer for Discord Mini",
       "DeviceType": 1,
       "ReadOnly": false
     },
     {
-      "Name": "Discord Volume Mixer+",
+      "Name": "Volume Mixer for Discord+",
       "DeviceType": 7,
       "ReadOnly": false
     }
