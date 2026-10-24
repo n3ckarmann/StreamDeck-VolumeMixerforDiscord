@@ -1,91 +1,101 @@
-# Development ended
+<div align="center">
 
-# Stream Deck Discord Volume Mixer
-**Version 2 is not yet officially released on the marketplace (it's in the testing phase for now). You can however download it manually from the releases section in this repository.**
+<img src="dist/icons/app_large@2x.png" width="128" alt="Discord Volume Mixer icon">
 
-This is a plugin for Stream Deck for managing Discord Voice chats:
-* Shows list of people in your voice chat.
-* You can **adjust volume** for each user.
-* You can **mute** each user by clicking on his name button.
-* **Indication** when a user is **speaking**.
-* **Self mute and deafen** buttons (deafen only on XL, mute on XL and STD)
-* Supports **Standard, Mini, XL, Mobile and SD+ Decks**.
-* You can adjust the audio mixer panel to your needs, it's quite modular - you can move buttons around etc.
-* Tested on W10x64.
+# Discord Volume Mixer for Stream Deck
 
-![](etc/sshot.png)
-![](etc/sshot2.png)
+**Change the volume of every person in your Discord voice chat, right from your Stream Deck.**
 
-## Support
+English · [Deutsch](README.de.md)
 
-### Common problems:
-* Stuck on `Loading property inspector...`
-	* Try installing the [MSVC 2019 x64 runtime](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170).
+</div>
 
-* `ERR 0`: Missing client ID/secret
-	* You haven't filled the credentials. See the Configuration section below.
+---
 
-* `ERR 1`: Could not connect to Discord
-	 * Check that the Discord app is running.
-	 * Check that the plugin is not blocked by firewall.
-	 * Check that you're not running Discord or the Stream Deck software under different privilleges (say as admin).
-	 * Try restarting the Discord.
+## What it does
 
-* `ERR 2`: Your credentials are wrong
-	* Check that you've configured everything properly on the Discord Developer Portal, it has to be exactly as in the screenshot in the Configuration section.
-	* Make sure that you're connected on the Discord with the same account you've used on the Discord Developer Portal.
-	* Try resetting your Client secret in the Discord Developer Portal and putting a new one into the plugin.
-	* After everything, restart the Discord client.
+- 🔊 **Volume per person** – turn people in your voice channel up or down, perfect with the dials of the **Stream Deck +**
+- 🔇 **Mute anyone** with a single press
+- 🟢 **See who is speaking** – the key lights up while someone talks
+- 🎙️ **Your own microphone and deafen** on a key
+- 🧩 **Works on all decks** – Standard, Mini, XL, Mobile and Stream Deck +
+- 🌍 **Available in** English, Deutsch, Español, Français, Italiano, Português, Polski, Nederlands, 日本語, 한국어 and 简体中文
 
-* `ERR 4`: Double check that you're using the same account in the Discord App as in the Developer Portal.
+![Screenshot](etc/sshot.png)
 
-* `ERR 8`:
-	* Make sure your app in the Discord Developer Portal doesn't contain the word "Discord" in the name.
-	* Triple check the configuration in the Discord Developer Portal.
-	* Turn off both Discord and Stream Deck software. Then turn on Discord. After it fully loads, turn on Stream Deck.
+## Installation
 
-* Avatars are not visible, otherwise everything works.
-	* Update the Stream Deck software.
+1. Download the latest `.streamDeckPlugin` file from the [releases](../../releases) and double-click it.
+2. Put the **Discord Volume Mixer** action on a key.
+3. Set up your own Discord app (once, takes two minutes) – see below.
 
-### Troubleshooting
-* **!!! First read Configuration below !!!**
-* If the plugin does not work:
-	* Check the "common problems" above.
-  	* Try uninstalling and reinstalling it.
-  	* Make sure you're not running the Discord or the Stream Deck software with administrator privileges.
-	* Check if there are not multiple profiles for "Discord Volume Mixer". If yes, remove them all and try again.
+> **Coming from the original plugin?** This version replaces it in place: your settings, Client ID/secret and layouts are kept.
 
-## Configuration
-1. Download and install the plugin from the Stream Deck Marketplace (preferred, handles auto updates) or from [the releases](https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2/releases).
-2. Add the "Discord Volume Mixer" button on your deck.
-3. Go to the [Discord developer portal](https://discordapp.com/developers) (if the link asks you for login and then shows the Discord app, close the window and click this link again) and create an application.
-	 * **You must use the same account in to the Developer portal as in your Discord application, otherwise it won't work.** (You can add the other account as app tester though.)
-	 * You're setting this stuff up for your own account, not for any bot or anything else.
-4. Create a new application. You can name it however you like, for example "DVM".
-	 * **Do not use "Discord" in the name of the app, [apparently the Discord doesn't like it.](https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2/issues/26)**
-6. In the newly created application under "Installation" (this page could be hidden under the menu button on the top left corner in smaller windows), set "Install link" to "Discord provided link".
-7. Hit "Save changes".
-8. Under "OAuth2", add redirect to `http://localhost:1337/callback`
-9. Hit "Save changes".
-10. Copy `Client ID` and `Client secret` and paste it in your Discord Volume Mixer button settings (the button used to access the volume mixer).
-	 * If you don't see the client secret, but only the "Reset Secret" button, simply click on the button, it will give you a new secret.
-11. Click on the Discord Volume Mixer button. Discord will ask you for some permissions & firewall and stuff.
-12. Done.
+## Setting up the Discord app
 
-**Don't play with the configuration of the buttons in the Volume Mixer profile unless you know what you're doing.**
+Discord only lets apps that you registered yourself control your voice chat, so every user needs their own (free) Discord app:
 
-![](etc/oauth.png)
-![](etc/oauth2.png)
-![](etc/streamdeck_settings.png)
+1. Open the [Discord Developer Portal](https://discord.com/developers/applications) with **the same account you use in the Discord app** and click **New Application**.
+   - Pick any name, but **don't use the word "Discord"** in it (Discord rejects that).
+2. Under **OAuth2**, add the redirect `http://localhost:1337/callback` and click **Save Changes**.
+3. Copy the **Client ID** and the **Client Secret** (click *Reset Secret* if you only see that button).
+4. Paste both into the settings of the Discord Volume Mixer key on your Stream Deck. They are hidden – click the 👁 eye to show them.
+5. Press the key and click **Authorize** in the window Discord shows you. Done!
 
-## Third-party libraries, credits
-* Qt 6 (tested on Qt 6.2.1 MSVC 2019 Win x64)
-* [QtStreamDeck2](https://github.com/CZDanol/QtStreamDeck2) for Stream Deck control.
-* [QtDiscordIPC](https://github.com/CZDanol/QtDiscordIPC/) for Discord control (IPC through QLocalSocket).
-* [Icons8 icons](https://icons8.com/)
+Treat the Client Secret like a password and never share it.
 
-### Credits
-* Big kudos to [Krabs](https://github.com/krabs-github) for helping me out with profiles for the XL version and testing and overall being awesome.
+![OAuth2 settings](etc/oauth.png)
 
-## TODO
-* Self status button
+## What the keys tell you
+
+| Text on the key | Meaning | What to do |
+| :--- | :--- | :--- |
+| `SETUP NEEDED` | Client ID or secret is missing | Fill in both in the key settings |
+| `DISCORD NOT RUNNING` | The Discord app is closed | Start Discord – the plugin connects by itself |
+| `DISCORD NOT READY` | Discord is still starting | Wait a moment |
+| `AUTHORIZE IN DISCORD` | Discord shows an authorization window | Click **Authorize** in Discord |
+| `DECLINED – PRESS TO RETRY` | The authorization was declined or timed out | Press the key and authorize in Discord |
+| `CHECK CLIENT ID` | Discord doesn't accept the Client ID | Check the ID; the app must belong to the account you use in Discord |
+| `CHECK SECRET` | Discord doesn't accept the secret | Reset the secret in the Developer Portal and paste the new one |
+| `WAITING FOR INTERNET` | Discord's servers can't be reached (e.g. right after booting) | Nothing – it reconnects automatically |
+| `NOBODY IN VOICE` | You are alone or not in a voice channel | Join a voice channel |
+
+Also make sure Discord and the Stream Deck software both run **without** administrator rights.
+
+### Sending a log
+
+Create an empty file `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\cz.danol.discordmixer.sdPlugin\`, reproduce the problem and attach the file to an [issue](../../issues). Delete it afterwards, it keeps growing.
+
+## Building from source
+
+Requirements: Windows 10/11 x64, [Qt 6.8 LTS](https://www.qt.io/download-qt-installer) with the *Qt WebSockets* module, CMake 3.20+ and either MinGW 13 or MSVC 2022.
+
+```powershell
+cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\Qt\6.8.3\mingw_64
+cmake --build build
+cmake --install build      # copies everything to bin\Release\cz.danol.discordmixer.sdPlugin and runs windeployqt
+```
+
+With `-DBUILD_IN_STREAMDECK_PLUGINS_DIR=ON` the plugin is built straight into your Stream Deck plugins folder.
+
+To get an installable `.streamDeckPlugin` file in one go: `.\tools\build-windows.ps1 -QtDir C:\Qt\6.8.3\mingw_64 -MinGWDir C:\Qt\Tools\mingw1310_64`
+
+- Texts and translations: [`src/translations.json`](src/translations.json) (button titles and settings) and `dist/<language>.json` (action names in the Stream Deck app)
+- Icons: SVG sources in [`etc/icons`](etc/icons)
+
+## Credits
+
+This plugin was created by **[Danol (Daniel Čejchan)](https://github.com/CZDanol)** – the [original project](https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2), including the [QtStreamDeck2](https://github.com/CZDanol/QtStreamDeck2) and [QtDiscordIPC](https://github.com/CZDanol/QtDiscordIPC) libraries it is built on, is his work. Since he ended development in 2024, the plugin is continued here as a community fork. Thank you, Danol!
+
+- **Danol** – original author
+- **[Krabs](https://github.com/krabs-github)** – profiles for the XL and testing of the original plugin
+- **Jan** – maintainer of this fork
+- Built with [Qt 6](https://www.qt.io/) (LGPLv3)
+
+Icons and app icon were made for this fork and are part of the project (GPLv3).
+
+## License
+
+[GNU General Public License v3.0](LICENSE.md), like the original project.
+
+<sub>Not affiliated with or endorsed by Discord Inc. or Elgato/Corsair. Discord is a trademark of Discord Inc.</sub>

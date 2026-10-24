@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Steruj czatem głosowym Discorda ze Stream Decka: zmieniaj głośność każdej osoby na kanale głosowym, wyciszaj je, sprawdzaj, kto mówi, i przełączaj swój mikrofon oraz dźwięk. Idealne z pokrętłami Stream Deck +.",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "Otwiera mikser głośności bieżącego kanału głosowego Discord"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "Wstecz",
+    "Tooltip": "Zamyka mikser głośności"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "Osoba na kanale głosowym",
+    "Tooltip": "Pokazuje osobę z kanału głosowego – naciśnij, aby wyciszyć, obróć pokrętło, aby zmienić głośność"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "Głośniej",
+    "Tooltip": "Zwiększa głośność osoby na kanale głosowym"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "Ciszej",
+    "Tooltip": "Zmniejsza głośność osoby na kanale głosowym"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "Następna strona",
+    "Tooltip": "Pokazuje kolejne osoby z kanału głosowego"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "Poprzednia strona",
+    "Tooltip": "Pokazuje poprzednie osoby z kanału głosowego"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "Mikrofon",
+    "Tooltip": "Wycisza/włącza twój mikrofon w Discordzie"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "Wyłącz dźwięk",
+    "Tooltip": "Wyłącza/włącza cały dźwięk Discorda"
+  }
+}

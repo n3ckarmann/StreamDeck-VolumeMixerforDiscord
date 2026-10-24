@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Controlla la chat vocale di Discord dallo Stream Deck: regola il volume di ogni persona nel canale vocale, silenziale, vedi chi sta parlando e attiva o disattiva il tuo microfono e l'audio. Ideale con le manopole dello Stream Deck +.",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "Apre il mixer del volume del tuo canale vocale Discord attuale"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "Indietro",
+    "Tooltip": "Chiude il mixer del volume"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "Membro del canale vocale",
+    "Tooltip": "Mostra un membro del tuo canale vocale: premi per silenziarlo, ruota la manopola per il volume"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "Volume su",
+    "Tooltip": "Alza il volume di un membro del canale vocale"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "Volume giù",
+    "Tooltip": "Abbassa il volume di un membro del canale vocale"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "Pagina successiva",
+    "Tooltip": "Mostra i membri successivi del canale vocale"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "Pagina precedente",
+    "Tooltip": "Mostra i membri precedenti del canale vocale"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "Microfono",
+    "Tooltip": "Silenzia/riattiva il tuo microfono in Discord"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "Disattiva audio",
+    "Tooltip": "Disattiva/riattiva tutto l'audio di Discord per te"
+  }
+}

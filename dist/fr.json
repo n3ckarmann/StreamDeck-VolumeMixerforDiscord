@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Contrôlez votre chat vocal Discord depuis le Stream Deck : réglez le volume de chaque personne du salon vocal, coupez-les, voyez qui parle et activez ou coupez votre micro et votre son. Idéal avec les boutons rotatifs du Stream Deck +.",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "Ouvre le mixeur de volume de votre salon vocal Discord actuel"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "Retour",
+    "Tooltip": "Ferme le mixeur de volume"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "Membre du salon vocal",
+    "Tooltip": "Affiche un membre de votre salon vocal – appuyez pour le rendre muet, tournez le bouton pour régler le volume"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "Volume +",
+    "Tooltip": "Augmente le volume d'un membre du salon vocal"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "Volume -",
+    "Tooltip": "Baisse le volume d'un membre du salon vocal"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "Page suivante",
+    "Tooltip": "Affiche les membres suivants du salon vocal"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "Page précédente",
+    "Tooltip": "Affiche les membres précédents du salon vocal"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "Micro",
+    "Tooltip": "Coupe/réactive votre micro dans Discord"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "Mettre en sourdine",
+    "Tooltip": "Coupe/réactive tout le son de Discord pour vous"
+  }
+}

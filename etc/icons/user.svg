@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><defs>
+<linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2e35"/><stop offset="1" stop-color="#101114"/></linearGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.10"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="white" gradientUnits="userSpaceOnUse" x1="0" y1="110" x2="0" y2="400"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9dce6"/></linearGradient>
+<linearGradient id="grey" gradientUnits="userSpaceOnUse" x1="0" y1="110" x2="0" y2="400"><stop offset="0" stop-color="#9aa0ad"/><stop offset="1" stop-color="#6b7180"/></linearGradient>
+<linearGradient id="green" gradientUnits="userSpaceOnUse" x1="0" y1="110" x2="0" y2="400"><stop offset="0" stop-color="#b9f6d0"/><stop offset="0.5" stop-color="#43d17f"/><stop offset="1" stop-color="#1f9d58"/></linearGradient>
+<linearGradient id="red" gradientUnits="userSpaceOnUse" x1="0" y1="110" x2="0" y2="400"><stop offset="0" stop-color="#ff8a8c"/><stop offset="1" stop-color="#e03b3e"/></linearGradient>
+<linearGradient id="blurple" gradientUnits="userSpaceOnUse" x1="0" y1="110" x2="0" y2="400"><stop offset="0" stop-color="#9aa3ff"/><stop offset="1" stop-color="#5865F2"/></linearGradient>
+<filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="shadow" filterUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.55"/></filter>
+<clipPath id="tc"><rect x="6" y="6" width="500" height="500" rx="112"/></clipPath>
+</defs><rect x="6" y="6" width="500" height="500" rx="112" fill="url(#tile)"/>
+<g clip-path="url(#tc)"><ellipse cx="256" cy="20" rx="340" ry="200" fill="url(#gloss)"/></g>
+<rect x="7.5" y="7.5" width="497" height="497" rx="110.5" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="3"/><g filter="url(#shadow)" fill="url(#white)"><circle cx="256" cy="200" r="70"/><path d="M126 392 a130 110 0 0 1 260 0 z"/></g></svg>

@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Stream Deck から Discord のボイスチャットを操作できます。ボイスチャンネルの各メンバーの音量調整やミュート、発言中の表示、自分のマイクとスピーカーミュートの切り替えが可能です。Stream Deck + のダイヤルに最適です。",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "現在の Discord ボイスチャンネルの音量ミキサーを開きます"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "戻る",
+    "Tooltip": "音量ミキサーを閉じます"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "ボイスチャンネルのメンバー",
+    "Tooltip": "ボイスチャンネルのメンバーを表示します。押すとミュート、ダイヤルで音量を変更します"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "音量を上げる",
+    "Tooltip": "メンバーの音量を上げます"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "音量を下げる",
+    "Tooltip": "メンバーの音量を下げます"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "次のページ",
+    "Tooltip": "次のメンバーを表示します"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "前のページ",
+    "Tooltip": "前のメンバーを表示します"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "マイク",
+    "Tooltip": "Discord のマイクをミュート/解除します"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "スピーカーミュート",
+    "Tooltip": "Discord の音声をすべてミュート/解除します"
+  }
+}

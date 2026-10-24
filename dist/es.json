@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Controla tu chat de voz de Discord desde el Stream Deck: cambia el volumen de cada persona del canal de voz, siléncialas, mira quién habla y activa o desactiva tu micrófono y el ensordecimiento. Ideal con los diales del Stream Deck +.",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "Abre el mezclador de volumen de tu canal de voz actual de Discord"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "Atrás",
+    "Tooltip": "Cierra el mezclador de volumen"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "Miembro del canal de voz",
+    "Tooltip": "Muestra a un miembro de tu canal de voz: pulsa para silenciar, gira el dial para cambiar el volumen"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "Subir volumen",
+    "Tooltip": "Sube el volumen de un miembro del canal de voz"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "Bajar volumen",
+    "Tooltip": "Baja el volumen de un miembro del canal de voz"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "Página siguiente",
+    "Tooltip": "Muestra los siguientes miembros del canal de voz"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "Página anterior",
+    "Tooltip": "Muestra los miembros anteriores del canal de voz"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "Micrófono",
+    "Tooltip": "Silencia o activa tu micrófono en Discord"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "Ensordecer",
+    "Tooltip": "Silencia o activa todo el audio de Discord para ti"
+  }
+}

@@ -1,25 +1,25 @@
 {
   "Actions": [
     {
-      "Icon": "icons/icons8_discord_new_72px",
+      "Icon": "icons/app",
       "Name": "Discord Volume Mixer",
       "States": [
         {
-          "Image": "icons/icons8_discord_new_72px",
+          "Image": "icons/app",
           "ShowTitle": false
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "Opens a mixer for Discord voice chat",
+      "Tooltip": "Opens the volume mixer for your current Discord voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "UUID": "cz.danol.discordmixer.openmixer"
     },
     {
-      "Icon": "icons/icons8_arrow_up_72px",
-      "Name": "[DVM] Back",
+      "Icon": "icons/back",
+      "Name": "Back",
       "States": [
         {
-          "Image": "icons/icons8_arrow_up_72px",
+          "Image": "icons/back",
           "ShowTitle": false
         }
       ],
@@ -27,18 +27,18 @@
       "UUID": "cz.danol.discordmixer.back"
     },
     {
-      "Icon": "icons/icons8_user_72px",
-      "Name": "[DVM] Voice channel member",
+      "Icon": "icons/user",
+      "Name": "Voice channel member",
       "States": [
         {
-          "Image": "icons/noicon",
+          "Image": "icons/empty",
           "ShowTitle": true,
           "TitleAlignment": "middle",
           "FontFamily": "Verdana",
           "FontSize": "8"
         },
         {
-          "Image": "icons/noicon",
+          "Image": "icons/empty",
           "ShowTitle": true,
           "TitleAlignment": "middle",
           "FontFamily": "Verdana",
@@ -51,63 +51,63 @@
       ],
       "Encoder": {
         "TriggerDescription": {
-          "Rotate": "Change user volume",
+          "Rotate": "Volume",
           "Push": "Configurable",
           "Touch": "Configurable"
         }
       },
       "UserTitleEnabled": false,
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "Tooltip": "Shows user avatar, status, volume.",
+      "Tooltip": "Shows a member of your voice channel – press to mute, turn the dial to change the volume",
       "UUID": "cz.danol.discordmixer.user"
     },
     {
-      "Icon": "icons/icons8_plus_math_72px",
-      "Name": "[DVM] Voice channel member volume up",
+      "Icon": "icons/volume_up",
+      "Name": "Volume up",
       "States": [
         {
-          "Image": "icons/icons8_plus_math_72px",
+          "Image": "icons/volume_up",
           "ShowTitle": false
         },
         {
-          "Image": "icons/noicon",
+          "Image": "icons/empty",
           "ShowTitle": false
         }
       ],
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "Tooltip": "Increase volume",
+      "Tooltip": "Makes a voice channel member louder",
       "UUID": "cz.danol.discordmixer.volumeup"
     },
     {
-      "Icon": "icons/icons8_minus_72px",
-      "Name": "[DVM] Voice channel member volume down",
+      "Icon": "icons/volume_down",
+      "Name": "Volume down",
       "States": [
         {
-          "Image": "icons/icons8_minus_72px",
+          "Image": "icons/volume_down",
           "ShowTitle": false
         },
         {
-          "Image": "icons/noicon",
+          "Image": "icons/empty",
           "ShowTitle": false
         }
       ],
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "Tooltip": "Decrease volume",
+      "Tooltip": "Makes a voice channel member quieter",
       "UUID": "cz.danol.discordmixer.volumedown"
     },
     {
-      "Icon": "icons/icons8_sort_right_72px",
-      "Name": "[DVM] Next page",
+      "Icon": "icons/page_next",
+      "Name": "Next page",
       "States": [
         {
-          "Image": "icons/icons8_sort_right_72px",
+          "Image": "icons/page_next",
           "ShowTitle": true,
           "TitleAlignment": "top",
           "FontFamily": "Verdana",
           "FontSize": "8"
         },
         {
-          "Image": "icons/noicon",
+          "Image": "icons/empty",
           "ShowTitle": true,
           "TitleAlignment": "top",
           "FontFamily": "Verdana",
@@ -115,23 +115,23 @@
         }
       ],
       "UserTitleEnabled": false,
-      "Tooltip": "Next page",
+      "Tooltip": "Shows the next members of the voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "UUID": "cz.danol.discordmixer.nextpage"
     },
     {
-      "Icon": "icons/icons8_sort_left_72px",
-      "Name": "[DVM] Previous page",
+      "Icon": "icons/page_prev",
+      "Name": "Previous page",
       "States": [
         {
-          "Image": "icons/icons8_sort_left_72px",
+          "Image": "icons/page_prev",
           "ShowTitle": true,
           "TitleAlignment": "top",
           "FontFamily": "Verdana",
           "FontSize": "8"
         },
         {
-          "Image": "icons/noicon",
+          "Image": "icons/empty",
           "ShowTitle": true,
           "TitleAlignment": "top",
           "FontFamily": "Verdana",
@@ -139,55 +139,55 @@
         }
       ],
       "UserTitleEnabled": false,
-      "Tooltip": "Previous page",
+      "Tooltip": "Shows the previous members of the voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "UUID": "cz.danol.discordmixer.previouspage"
     },
     {
-      "Icon": "icons/icons8_block_microphone_72px",
-      "Name": "[DVM] Mute/unmute microphone",
+      "Icon": "icons/mic_off",
+      "Name": "Microphone",
       "States": [
         {
-          "Image": "icons/icons8_microphone_72px",
+          "Image": "icons/mic_on",
           "ShowTitle": false
         },
         {
-          "Image": "icons/icons8_block_microphone_72px",
+          "Image": "icons/mic_off",
           "ShowTitle": false
         }
       ],
-      "Tooltip": "Mute/unmute microphone",
+      "Tooltip": "Mutes/unmutes your microphone in Discord",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "UUID": "cz.danol.discordmixer.microphone"
     },
     {
-      "Icon": "icons/icons8_no_audio_72px",
-      "Name": "[DVM] Mute/unmute audio (deafen)",
+      "Icon": "icons/audio_off",
+      "Name": "Deafen",
       "States": [
         {
-          "Image": "icons/icons8_speaker_72px",
+          "Image": "icons/audio_on",
           "ShowTitle": false
         },
         {
-          "Image": "icons/icons8_no_audio_72px",
+          "Image": "icons/audio_off",
           "ShowTitle": false
         }
       ],
-      "Tooltip": "Mute/unmute audio (deafen)",
+      "Tooltip": "Mutes/unmutes all Discord audio for you (deafen)",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "UUID": "cz.danol.discordmixer.deafen"
     }
   ],
   "SDKVersion": 2,
-  "Author": "Danol",
+  "Author": "Danol & contributors",
   "CodePathWin": "bin/streamdeck-discordmixer.exe",
-  "Description": "Provides a mixer for Discord voice chat that allows adjusting volume for individual users.\nThis application uses Icons8 icons (https://icons8.com)",
+  "Description": "Control your Discord voice chat from the Stream Deck: change the volume of every person in your voice channel, mute them, see who is speaking, and toggle your own microphone and deafen. Works great with the dials of the Stream Deck +.",
   "Category": "Discord Volume Mixer",
-  "CategoryIcon": "icons/icons8_discord_new_72px",
+  "CategoryIcon": "icons/category",
   "Name": "Discord Volume Mixer",
-  "Icon": "icons/icons8_discord_new_72px",
+  "Icon": "icons/app_large",
   "URL": "https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2",
-  "Version": "2.0.1.9",
+  "Version": "2.1.0.0",
   "Profiles": [
     {
       "Name": "Discord Volume Mixer",
@@ -222,6 +222,6 @@
     }
   ],
   "Software": {
-    "MinimumVersion": "6.1"
+    "MinimumVersion": "6.4"
   }
 }

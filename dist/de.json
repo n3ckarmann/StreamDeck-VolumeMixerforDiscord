@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Steuere deinen Discord-Sprachchat mit dem Stream Deck: Lautstärke jeder Person im Sprachkanal ändern, Personen stummschalten, sehen wer spricht, und dein eigenes Mikrofon und den Ton schalten. Ideal mit den Drehreglern des Stream Deck +.",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "Öffnet den Lautstärkemixer für deinen aktuellen Discord-Sprachkanal"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "Zurück",
+    "Tooltip": "Schließt den Lautstärkemixer"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "Person im Sprachkanal",
+    "Tooltip": "Zeigt eine Person aus deinem Sprachkanal – drücken zum Stummschalten, Drehregler für die Lautstärke"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "Lauter",
+    "Tooltip": "Macht eine Person im Sprachkanal lauter"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "Leiser",
+    "Tooltip": "Macht eine Person im Sprachkanal leiser"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "Nächste Seite",
+    "Tooltip": "Zeigt die nächsten Personen im Sprachkanal"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "Vorherige Seite",
+    "Tooltip": "Zeigt die vorherigen Personen im Sprachkanal"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "Mikrofon",
+    "Tooltip": "Schaltet dein Mikrofon in Discord stumm/an"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "Ton aus",
+    "Tooltip": "Schaltet den gesamten Discord-Ton für dich aus/an"
+  }
+}

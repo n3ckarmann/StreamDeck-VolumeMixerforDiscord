@@ -1,0 +1,41 @@
+{
+  "Name": "Discord Volume Mixer",
+  "Description": "Bedien je Discord-spraakchat vanaf het Stream Deck: pas het volume van iedereen in het spraakkanaal aan, demp mensen, zie wie er praat en schakel je eigen microfoon en geluid. Ideaal met de draaiknoppen van het Stream Deck +.",
+  "Category": "Discord Volume Mixer",
+  "cz.danol.discordmixer.openmixer": {
+    "Name": "Discord Volume Mixer",
+    "Tooltip": "Opent de volumemixer voor je huidige Discord-spraakkanaal"
+  },
+  "cz.danol.discordmixer.back": {
+    "Name": "Terug",
+    "Tooltip": "Sluit de volumemixer"
+  },
+  "cz.danol.discordmixer.user": {
+    "Name": "Lid van het spraakkanaal",
+    "Tooltip": "Toont een lid van je spraakkanaal – druk om te dempen, draai aan de knop voor het volume"
+  },
+  "cz.danol.discordmixer.volumeup": {
+    "Name": "Harder",
+    "Tooltip": "Zet een lid van het spraakkanaal harder"
+  },
+  "cz.danol.discordmixer.volumedown": {
+    "Name": "Zachter",
+    "Tooltip": "Zet een lid van het spraakkanaal zachter"
+  },
+  "cz.danol.discordmixer.nextpage": {
+    "Name": "Volgende pagina",
+    "Tooltip": "Toont de volgende leden van het spraakkanaal"
+  },
+  "cz.danol.discordmixer.previouspage": {
+    "Name": "Vorige pagina",
+    "Tooltip": "Toont de vorige leden van het spraakkanaal"
+  },
+  "cz.danol.discordmixer.microphone": {
+    "Name": "Microfoon",
+    "Tooltip": "Dempt/activeert je microfoon in Discord"
+  },
+  "cz.danol.discordmixer.deafen": {
+    "Name": "Geluid uit",
+    "Tooltip": "Schakelt al het Discord-geluid voor jou uit/aan"
+  }
+}
