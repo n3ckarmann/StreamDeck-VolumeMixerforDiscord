@@ -40,13 +40,6 @@ jobs:
           path: release/com.n3ckarmann.volumemixer.streamDeckPlugin
           if-no-files-found: error
 
-      - name: Attach to release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release/com.n3ckarmann.volumemixer.streamDeckPlugin
-          draft: true
-
   macos:
     runs-on: macos-14
     steps:
@@ -74,3 +67,35 @@ jobs:
           name: com.n3ckarmann.volumemixer.streamDeckPlugin (macOS)
           path: release/com.n3ckarmann.volumemixer.streamDeckPlugin
           if-no-files-found: error
+
+  # One .streamDeckPlugin for both systems: Stream Deck picks CodePathWin or CodePathMac
+  package:
+    needs: [windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+
+      - name: Combine
+        run: |
+          mkdir combined
+          for f in parts/*/com.n3ckarmann.volumemixer.streamDeckPlugin; do unzip -qo "$f" -d combined; done
+          test -f combined/com.n3ckarmann.volumemixer.sdPlugin/bin/streamdeck-volumemixer.exe
+          test -f combined/com.n3ckarmann.volumemixer.sdPlugin/bin/streamdeck-volumemixer.app/Contents/MacOS/streamdeck-volumemixer
+          mkdir release
+          (cd combined && zip -qry ../release/com.n3ckarmann.volumemixer.streamDeckPlugin com.n3ckarmann.volumemixer.sdPlugin)
+
+      - name: Upload plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: com.n3ckarmann.volumemixer.streamDeckPlugin (Windows + macOS)
+          path: release/com.n3ckarmann.volumemixer.streamDeckPlugin
+          if-no-files-found: error
+
+      - name: Attach to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/com.n3ckarmann.volumemixer.streamDeckPlugin
+          draft: true
