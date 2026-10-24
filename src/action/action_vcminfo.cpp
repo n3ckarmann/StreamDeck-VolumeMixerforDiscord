@@ -5,6 +5,7 @@
 #include <qtstreamdeck2/qstreamdeckpropertyinspectorbuilder.h>
 
 #include "dvmplugin.h"
+#include "i18n.h"
 
 Action_VCMInfo::Action_VCMInfo() {
 	connect(this, &QStreamDeckAction::keyDown, this, &Action_VCMInfo::onPressed);
@@ -28,16 +29,16 @@ void Action_VCMInfo::update_button() {
 
 	const bool isSpeaking = vcmp && plugin()->speakingVoiceChannelMembers.contains(vcm.userID);
 
-	const QString volumeStr = vcm.isMuted ? "MUTED" : QStringLiteral("%1 %").arg(QString::number(vcm.volume));
+	const QString volumeStr = vcm.isMuted ? I18n::tr("title.muted") : QStringLiteral("%1 %").arg(QString::number(vcm.volume));
 
 	{
 		QString newTitle;
 		if(!plugin()->discord.isConnected())
-			newTitle = plugin()->discord.connectionError();
+			newTitle = plugin()->connectionStatusText();
 		else if(vcmp)
-			newTitle = QStringLiteral("%1\n%3\n%2").arg(vcm.nick, volumeStr, isSpeaking ? ">>SPEAKING<<" : vcm.isMuted ? "##" : "");
+			newTitle = QStringLiteral("%1\n%3\n%2").arg(vcm.nick, volumeStr, isSpeaking ? I18n::tr("title.speaking") : "");
 		else if(plugin()->voiceChannelMembers.isEmpty() && !plugin()->globalSetting("hideNobodyInVoiceChatText").toBool())
-			newTitle = QString("NOBODY\nIN\nVOICE CHAT");
+			newTitle = I18n::tr("title.nobodyKey");
 
 		if(title_ != newTitle) {
 			title_ = newTitle;
@@ -85,7 +86,7 @@ void Action_VCMInfo::update_encoder() {
 	{
 		QString newTitle;
 		if(!plugin()->discord.isConnected())
-			newTitle = plugin()->discord.connectionError();
+			newTitle = QString(plugin()->connectionStatusText()).replace('\n', ' ');
 		else if(vcmp) {
 			if(setting("showPaging").toBool())
 				newTitle += QStringLiteral("%1/%2 ").arg(QString::number(vcmp.userIndex + 1), QString::number(plugin()->voiceChannelMembers.size()));
@@ -93,7 +94,7 @@ void Action_VCMInfo::update_encoder() {
 			newTitle += vcm.nick;
 		}
 		else if(plugin()->voiceChannelMembers.isEmpty() && !plugin()->globalSetting("hideNobodyInVoiceChatText").toBool())
-			newTitle = QString("NOBODY IN VOICE");
+			newTitle = I18n::tr("title.nobodyDial");
 
 		if(newTitle != title_) {
 			title_ = newTitle;
@@ -123,7 +124,7 @@ void Action_VCMInfo::update_encoder() {
 			p.drawImage(0, 0, avatar.scaled(48, 48, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 		}
 		else if(vcmp) {
-			static const QImage avatarPlaceholder = QImage("icons/icons8_user_72px.png").scaled(48, 48, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+			static const QImage avatarPlaceholder = QImage("icons/user.png").scaled(48, 48, Qt::KeepAspectRatio, Qt::SmoothTransformation);
 			p.drawImage(0, 0, avatarPlaceholder);
 		}
 
@@ -139,7 +140,7 @@ void Action_VCMInfo::update_encoder() {
 	{
 		QString newValue;
 		if(vcm.isMuted)
-			newValue = "MUTED";
+			newValue = I18n::tr("title.muted");
 		else if(vcmp) {
 			newValue = QStringLiteral("%1 %").arg(qRound(vcm.volume));
 			if(isSpeaking)
@@ -198,11 +199,17 @@ void Action_VCMInfo::executeAction(Action_VCMInfo::Action a) {
 		}
 
 		case Action::nextUser:
+			if(plugin()->voiceChannelMembers.isEmpty())
+				break;
+
 			device()->voiceChannelMemberIndexOffset = (device()->voiceChannelMemberIndexOffset + 1) % plugin()->voiceChannelMembers.size();
 			emit plugin()->buttonsUpdateRequested();
 			break;
 
 		case Action::previousUser:
+			if(plugin()->voiceChannelMembers.isEmpty())
+				break;
+
 			device()->voiceChannelMemberIndexOffset = (device()->voiceChannelMemberIndexOffset + plugin()->voiceChannelMembers.size() - 1) % plugin()->voiceChannelMembers.size();
 			emit plugin()->buttonsUpdateRequested();
 			break;
@@ -214,22 +221,23 @@ void Action_VCMInfo::executeAction(Action_VCMInfo::Action a) {
 }
 
 void Action_VCMInfo::buildPropertyInspector(QStreamDeckPropertyInspectorBuilder &b) {
-	b.addCheckBox("hideNobodyInVoiceChatText", "Hide 'Nobody in voice chat' text (global)").linkWithGlobalSetting();
+	b.addCheckBox("hideNobodyInVoiceChatText", I18n::tr("pi.hideNobody")).linkWithGlobalSetting();
 
-	static const QStringList actionSettings{
-		"Mute/unmute user",
-		"Next user",
-		"Previous user",
-		"None",
+	// Order has to match the Action enum
+	const QStringList actionSettings{
+		I18n::tr("pi.action.muteUser"),
+		I18n::tr("pi.action.nextUser"),
+		I18n::tr("pi.action.previousUser"),
+		I18n::tr("pi.action.none"),
 	};
-	b.addComboBox("pressAction", "Press action", actionSettings).linkWithActionSetting();
+	b.addComboBox("pressAction", I18n::tr("pi.pressAction"), actionSettings).linkWithActionSetting();
 
 	if(controller() == Controller::encoder) {
-		b.addComboBox("tapAction", "Tap action", actionSettings).linkWithActionSetting();
-		b.addCheckBox("showPaging", "Show paging").linkWithActionSetting();
+		b.addComboBox("tapAction", I18n::tr("pi.tapAction"), actionSettings).linkWithActionSetting();
+		b.addCheckBox("showPaging", I18n::tr("pi.showPaging")).linkWithActionSetting();
 
-		b.addSpinBox("voiceChannelVolumeEncoderStep", "Volume step").linkWithGlobalSetting();
-		b.addMessage("Volume step is global for all volume encoders.");
+		b.addSpinBox("voiceChannelVolumeEncoderStep", I18n::tr("pi.volumeStep")).linkWithGlobalSetting();
+		b.addMessage(I18n::tr("pi.volumeStepDialsNote"));
 	}
 
 

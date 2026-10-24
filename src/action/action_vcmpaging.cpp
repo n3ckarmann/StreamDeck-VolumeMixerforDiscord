@@ -3,6 +3,7 @@
 #include <qtstreamdeck2/qstreamdeckpropertyinspectorbuilder.h>
 
 #include "dvmplugin.h"
+#include "i18n.h"
 
 Action_VCMPaging::Action_VCMPaging() {
 	connect(this, &QStreamDeckAction::initialized, this, &Action_VCMPaging::onInitialized);
@@ -55,7 +56,7 @@ void Action_VCMPaging::update() {
 }
 
 void Action_VCMPaging::buildPropertyInspector(QStreamDeckPropertyInspectorBuilder &b) {
-	b.addSpinBox("step", "Page step").linkWithActionSetting();
+	b.addSpinBox("step", I18n::tr("pi.pageStep")).linkWithActionSetting();
 	DVMAction::buildPropertyInspector(b);
 }
 

@@ -87,6 +87,11 @@ void QStreamDeckPlugin::init(const QString &pluginUID, QCoreApplication &app) {
 	emit initialized();
 }
 
+QString QStreamDeckPlugin::language() const {
+	const QString lang = QJsonDocument::fromJson(info_.toUtf8()).object()["application"].toObject()["language"].toString();
+	return lang.isEmpty() ? QStringLiteral("en") : lang;
+}
+
 void QStreamDeckPlugin::setGlobalSetting(const QString &key, const QJsonValue &set) {
 	globalSettings_[key] = set;
 	setGlobalSettings(globalSettings_);

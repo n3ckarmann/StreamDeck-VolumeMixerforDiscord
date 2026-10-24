@@ -38,6 +38,14 @@ public:
 		return pluginUID_;
 	}
 
+	/// Stream Deck "info" JSON passed on the command line (application, devices, ...)
+	inline const QString &info() const {
+		return info_;
+	}
+
+	/// Language of the Stream Deck application (for example "en", "de", "zh_CN"), "en" if unknown
+	QString language() const;
+
 public:
 	/**
  * Returns global settings of the plugin.

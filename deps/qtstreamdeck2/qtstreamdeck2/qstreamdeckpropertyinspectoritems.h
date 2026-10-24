@@ -209,6 +209,36 @@ public:
 			buildPost(sink);
 		}
 	};
+	/// Line edit whose content is hidden (like a password) until the user clicks the eye button next to it
+	struct Item_SecretLineEdit final : public ValueItemT<Item_SecretLineEdit> {
+
+	public:
+		QString showLabel = "Show", hideLabel = "Hide";
+
+	public:
+		inline T &setToggleLabels(const QString &show, const QString &hide) {
+			showLabel = show;
+			hideLabel = hide;
+			return this->ref();
+		}
+
+		void buildHTML(QString &sink) const override {
+			buildPre(sink);
+			sink += "<div class=\"sdpi-item-value secret-field\">";
+			sink += QStringLiteral("<input type=\"password\" autocomplete=\"off\" spellcheck=\"false\" oninput=\"notifyValueChanged(this.name, this.value)\"");
+			sink += QStringLiteral(" value=\"%1\"").arg(escapeQuotes(this->value.toString()));
+			this->buildProperties(sink);
+			sink += ">";
+			sink += QStringLiteral(
+				"<button type=\"button\" class=\"secret-toggle\" title=\"%1\" data-show=\"%1\" data-hide=\"%2\" onclick=\"toggleSecret(this)\">"
+				"<svg class=\"eye-open\" viewBox=\"0 0 24 24\"><path d=\"M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3.5\"/></svg>"
+				"<svg class=\"eye-closed\" viewBox=\"0 0 24 24\"><path d=\"M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><path d=\"M3 3l18 18\"/></svg>"
+				"</button>"
+			).arg(escapeQuotes(showLabel), escapeQuotes(hideLabel));
+			sink += "</div>";
+			buildPost(sink);
+		}
+	};
 	struct Item_SpinBox final : public ValueItemT<Item_SpinBox> {
 
 		inline T &setPlaceholder(const QString &set) {

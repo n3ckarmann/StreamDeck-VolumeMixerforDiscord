@@ -3,6 +3,7 @@
 #include <qtstreamdeck2/qstreamdeckpropertyinspectorbuilder.h>
 
 #include "dvmplugin.h"
+#include "i18n.h"
 
 Action_VCMVolume::Action_VCMVolume() {
 	connect(this, &QStreamDeckAction::initialized, this, &Action_VCMVolume::onInitialized);
@@ -28,8 +29,8 @@ void Action_VCMVolume::update() {
 }
 
 void Action_VCMVolume::buildPropertyInspector(QStreamDeckPropertyInspectorBuilder &b) {
-	b.addSpinBox("voiceChannelVolumeButtonStep", "Volume step").linkWithGlobalSetting();
-	b.addMessage("Volume step is global for all volume buttons.");
+	b.addSpinBox("voiceChannelVolumeButtonStep", I18n::tr("pi.volumeStep")).linkWithGlobalSetting();
+	b.addMessage(I18n::tr("pi.volumeStepButtonsNote"));
 
 	VoiceChannelMemberAction::buildPropertyInspector(b);
 }

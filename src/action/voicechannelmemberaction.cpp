@@ -3,6 +3,7 @@
 #include <qtstreamdeck2/qstreamdeckpropertyinspectorbuilder.h>
 
 #include "dvmplugin.h"
+#include "i18n.h"
 #include "dvmdevice.h"
 
 VoiceChannelMemberAction::VoiceChannelMemberAction() {
@@ -34,10 +35,10 @@ VoiceChannelMemberAction::VoiceChannelMemberResult VoiceChannelMemberAction::voi
 }
 
 void VoiceChannelMemberAction::buildPropertyInspector(QStreamDeckPropertyInspectorBuilder &b) {
-	b.addLineEdit("user_ix", "User index or ID").linkWithActionSetting();
+	b.addLineEdit("user_ix", I18n::tr("pi.userIndex")).linkWithActionSetting();
 	b.addMessage(QStringList{
-		"Index in the channel users list, indexed from 0.",
-		"Alternatively, you can also use User ID (right click user -> copy ID) to set it to a specific user."
+		I18n::tr("pi.userIndexHelp1"),
+		I18n::tr("pi.userIndexHelp2"),
 	});
 
 	DVMAction::buildPropertyInspector(b);

@@ -3,6 +3,15 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="sdpi.css">
+    <style>
+        .secret-field { display: flex; align-items: center; gap: 4px; }
+        .secret-field input { flex: 1; min-width: 0; margin: 0; }
+        .secret-toggle { flex: none; width: 26px; height: 22px; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .secret-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+        .secret-toggle .eye-closed, .secret-toggle.revealed .eye-open { display: none; }
+        .secret-toggle.revealed .eye-closed { display: block; }
+        .credits { opacity: 0.9; font-size: 9pt; }
+    </style>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">

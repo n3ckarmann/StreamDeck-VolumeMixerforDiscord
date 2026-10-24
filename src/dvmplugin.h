@@ -23,6 +23,14 @@ public slots:
 	void updateChannelMembersData();
 
 public:
+	/// Localized, human readable text for the current Discord connection problem (for button titles)
+	QString connectionStatusText() const;
+
+public:
+	static constexpr const char *originalProjectUrl = "https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2";
+	static constexpr const char *setupGuideUrl = "https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2#configuration";
+
+public:
 	/// Processes voice state update for the user itself
 	void updateSelfVoiceState(const QDiscordMessage &msg);
 

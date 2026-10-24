@@ -56,3 +56,12 @@ function openUrl(url) {
         },
     }));
 }
+
+// Shows/hides the content of a secret line edit (see Item_SecretLineEdit)
+function toggleSecret(button) {
+    const input = button.parentElement.querySelector("input");
+    const reveal = input.type === "password";
+    input.type = reveal ? "text" : "password";
+    button.classList.toggle("revealed", reveal);
+    button.title = reveal ? button.dataset.hide : button.dataset.show;
+}

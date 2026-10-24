@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-# Build tested on MSVC 2016 x64
+# Builds with Qt 6.8 LTS, either MSVC 2022 or MinGW 13 (x64)
 
 project(streamdeck-discordmixer LANGUAGES CXX)
 
@@ -36,6 +36,9 @@ target_compile_definitions(${target} PRIVATE QT_DISABLE_DEPRECATED_BEFORE=0x0602
 file(GLOB_RECURSE source_files CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/*.cpp")
 target_sources(${target} PRIVATE ${source_files})
 target_include_directories(${target} PRIVATE "${PROJECT_SOURCE_DIR}/src")
+
+# Plugin texts in all languages, compiled into the executable
+qt_add_resources(${target} "translations" PREFIX "/" BASE "${PROJECT_SOURCE_DIR}/src" FILES "${PROJECT_SOURCE_DIR}/src/translations.json")
 
 # ===========================================
 # QtStreamDeck

@@ -45,6 +45,11 @@ public:
 		return addItem<I::Item_LineEdit>().setID(id).setLabel(label);
 	}
 
+	/// Single line text edit with hidden content (shown on demand), for secrets
+	inline auto &addSecretLineEdit(const QString &id, const QString &label) {
+		return addItem<I::Item_SecretLineEdit>().setID(id).setLabel(label);
+	}
+
 	/// Integer input
 	inline auto &addSpinBox(const QString &id, const QString &label) {
 		return addItem<I::Item_SpinBox>().setID(id).setLabel(label);

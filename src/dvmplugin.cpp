@@ -1,6 +1,7 @@
 #include "dvmplugin.h"
 
 #include "dvmdevice.h"
+#include "i18n.h"
 
 #include "action/action_openmixer.h"
 #include "action/action_vcminfo.h"
@@ -93,6 +94,29 @@ void DVMPlugin::connectToDiscord() {
 		if(!noAutoRetryErrors.contains(discord.connectionError()))
 			discordReconnectTimer_.start(qMin(discordReconnectTimer_.interval() * 2, maxReconnectInterval));
 	}
+}
+
+QString DVMPlugin::connectionStatusText() const {
+	static const QHash<QString, const char *> keys{
+		{"CONNECTING",   "status.connecting"},
+		{"AUTHORIZE",    "status.authorize"},
+		{"ERR 0",        "status.setup"},
+		{"ERR 1",        "status.noDiscord"},
+		{"ERR 2",        "status.badClient"},
+		{"ERR 3",        "status.noInternet"},
+		{"ERR 4",        "status.declined"},
+		{"ERR 5",        "status.badSecret"},
+		{"ERR 6",        "status.loginFailed"},
+		{"ERR 7",        "status.loginFailed"},
+		{"ERR 8",        "status.notReady"},
+		{"DISCONNECTED", "status.disconnected"},
+	};
+
+	const QString err = discord.connectionError();
+	if(const char *key = keys.value(err))
+		return I18n::tr(key);
+
+	return err.isEmpty() ? I18n::tr("status.disconnected") : err;
 }
 
 void DVMPlugin::updateChannelMembersData() {
@@ -244,6 +268,8 @@ void DVMPlugin::onDiscordMessageReceived(const QDiscordMessage &msg) {
 }
 
 void DVMPlugin::onInitialized() {
+	I18n::setLanguage(language());
+
 	setGlobalSettingDefault("voiceChannelVolumeButtonStep", 5);
 	setGlobalSettingDefault("voiceChannelVolumeEncoderStep", 5);
 

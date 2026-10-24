@@ -212,7 +212,7 @@ bool QDiscord::connect(const QString &clientID, const QString &clientSecret) {
             // Authorize in Discord
             QString authCode;
             {
-                connectionError_ = "AUTHORIZE\nIN\nDISCORD";
+                connectionError_ = "AUTHORIZE";
                 emit connectionStateChanged();
 
                 sendMessage(QJsonObject{
