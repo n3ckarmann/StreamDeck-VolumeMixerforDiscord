@@ -36,7 +36,7 @@ jobs:
       - name: Upload plugin
         uses: actions/upload-artifact@v4
         with:
-          name: com.n3ckarmann.volumemixer.streamDeckPlugin
+          name: com.n3ckarmann.volumemixer.streamDeckPlugin (Windows)
           path: release/com.n3ckarmann.volumemixer.streamDeckPlugin
           if-no-files-found: error
 
@@ -46,3 +46,31 @@ jobs:
         with:
           files: release/com.n3ckarmann.volumemixer.streamDeckPlugin
           draft: true
+
+  macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          host: mac
+          target: desktop
+          arch: clang_64
+          modules: qtwebsockets
+          cache: true
+
+      - name: Install Ninja
+        run: brew install ninja
+
+      - name: Build and package
+        run: ./tools/build-macos.sh "$QT_ROOT_DIR"
+
+      - name: Upload plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: com.n3ckarmann.volumemixer.streamDeckPlugin (macOS)
+          path: release/com.n3ckarmann.volumemixer.streamDeckPlugin
+          if-no-files-found: error

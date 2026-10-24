@@ -84,7 +84,7 @@ bool QDiscord::connect(const QString &clientID, const QString &clientSecret) {
         // start connecting
         for(int i = 0; i < 10; i++) {
             socket_.abort();
-            socket_.connectToServer("discord-ipc-" + QString::number(i));
+            socket_.connectToServer(ipcPipeName(i));
             qDebug() << "Trying to connect to Discord (" << i << ")";
 
             if(socket_.waitForConnected(3000))
@@ -290,8 +290,29 @@ bool QDiscord::connect(const QString &clientID, const QString &clientSecret) {
 }
 
 QString QDiscord::oauthFilePath() {
+#ifdef Q_OS_MACOS
+    // The executable lives in <plugin>/bin/<name>.app/Contents/MacOS, keep the token next to the plugin's manifest
+    return QDir(QCoreApplication::applicationDirPath()).absoluteFilePath("../../../../discordOauth.json");
+#else
     // The executable lives in <plugin>/bin, keep the token next to the plugin's manifest
     return QDir(QCoreApplication::applicationDirPath()).absoluteFilePath("../discordOauth.json");
+#endif
+}
+
+QString QDiscord::ipcPipeName(int index) {
+    const QString name = QStringLiteral("discord-ipc-%1").arg(index);
+#ifdef Q_OS_WIN
+    // Named pipe \\.\pipe\discord-ipc-N
+    return name;
+#else
+    // Unix socket in the first temp directory that is set, same lookup order as Discord's own RPC library
+    for(const char *var: {"XDG_RUNTIME_DIR", "TMPDIR", "TMP", "TEMP"}) {
+        const QString dir = qEnvironmentVariable(var);
+        if(!dir.isEmpty())
+            return QDir(dir).absoluteFilePath(name);
+    }
+    return QStringLiteral("/tmp/") + name;
+#endif
 }
 
 QNetworkReply::NetworkError QDiscord::requestToken(const QUrlQuery &query, QJsonObject &result) {
