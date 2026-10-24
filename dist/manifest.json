@@ -210,7 +210,7 @@
   "Name": "Volume Mixer for Discord",
   "Icon": "icons/app_large",
   "URL": "https://github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord",
-  "Version": "2.1.1.0",
+  "Version": "2.1.2.0",
   "Profiles": [
     {
       "Name": "Volume Mixer for Discord",

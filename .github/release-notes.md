@@ -6,6 +6,10 @@
 
 Coming from the old plugin? Install this one while the old one is still installed: your Client ID, secret and Discord login are taken over. Then remove the old plugin.
 
+### Fixed in 2.1.2
+
+- Stream Deck Neo: the bundled profile now puts "Who is speaking" on the infobar (it stayed black before)
+
 ### Fixed in 2.1.1
 
 - The plugin can be installed on Windows again (2.1.0 stopped with an extraction error because of the macOS part of the file)
@@ -46,6 +50,7 @@ xattr -dr com.apple.quarantine ~/Library/Application\ Support/com.elgato.StreamD
 
 ### Neu seit dem Original (Kurzfassung auf Deutsch)
 
+- 2.1.2: Im Neo-Profil ist „Wer spricht“ jetzt direkt auf der Infobar (sie blieb vorher schwarz)
 - 2.1.1: Das Plugin lässt sich unter Windows wieder installieren (2.1.0 brach beim Entpacken ab)
 
 - macOS-Unterstützung, Profile für Stream Deck **Neo** (mit Infobar „Wer spricht“) und **+ XL**
