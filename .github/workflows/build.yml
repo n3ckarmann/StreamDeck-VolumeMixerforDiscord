@@ -110,6 +110,17 @@ jobs:
           gh api "repos/${{ github.repository }}/releases" --paginate --jq ".[] | select(.draft and .tag_name == \"$TAG\") | .id" |
             while read -r id; do gh api -X DELETE "repos/${{ github.repository }}/releases/$id"; done
 
+      # A manual re-run of an existing release moves its tag to the commit that was just built
+      - name: Point existing tag to this build
+        if: inputs.release_tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          if gh api "repos/${{ github.repository }}/git/ref/tags/$TAG" > /dev/null 2>&1; then
+            gh api -X PATCH "repos/${{ github.repository }}/git/refs/tags/$TAG" -f sha="${{ github.sha }}" -F force=true
+          fi
+
       - name: Attach to release
         if: startsWith(github.ref, 'refs/tags/v') || inputs.release_tag != ''
         uses: softprops/action-gh-release@v2
