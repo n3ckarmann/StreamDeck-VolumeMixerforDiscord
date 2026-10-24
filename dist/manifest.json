@@ -59,7 +59,8 @@
       "UserTitleEnabled": false,
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "Tooltip": "Shows a member of your voice channel – press to mute, turn the dial to change the volume",
-      "UUID": "cz.danol.discordmixer.user"
+      "UUID": "cz.danol.discordmixer.user",
+      "DisableAutomaticStates": true
     },
     {
       "Icon": "icons/volume_up",
@@ -76,7 +77,8 @@
       ],
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "Tooltip": "Makes a voice channel member louder",
-      "UUID": "cz.danol.discordmixer.volumeup"
+      "UUID": "cz.danol.discordmixer.volumeup",
+      "DisableAutomaticStates": true
     },
     {
       "Icon": "icons/volume_down",
@@ -93,7 +95,8 @@
       ],
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "Tooltip": "Makes a voice channel member quieter",
-      "UUID": "cz.danol.discordmixer.volumedown"
+      "UUID": "cz.danol.discordmixer.volumedown",
+      "DisableAutomaticStates": true
     },
     {
       "Icon": "icons/page_next",
@@ -117,7 +120,8 @@
       "UserTitleEnabled": false,
       "Tooltip": "Shows the next members of the voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.nextpage"
+      "UUID": "cz.danol.discordmixer.nextpage",
+      "DisableAutomaticStates": true
     },
     {
       "Icon": "icons/page_prev",
@@ -141,7 +145,8 @@
       "UserTitleEnabled": false,
       "Tooltip": "Shows the previous members of the voice channel",
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
-      "UUID": "cz.danol.discordmixer.previouspage"
+      "UUID": "cz.danol.discordmixer.previouspage",
+      "DisableAutomaticStates": true
     },
     {
       "Icon": "icons/mic_off",
