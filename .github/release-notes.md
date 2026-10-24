@@ -1,4 +1,4 @@
-**Volume Mixer for Discord** continues [Danol's Discord Volume Mixer](https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2), whose development has ended. Many thanks to Danol for the original! This fork is developed with the help of Claude Code.
+**[Volume Mixer for Discord](https://github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord)** continues Danol's Discord Volume Mixer, whose development has ended. Many thanks to Danol for the original! This fork is developed with the help of Claude Code. Setup guide, issues and source code: [github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord](https://github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord)
 
 ### Download
 
@@ -7,6 +7,8 @@
 Coming from the old plugin? Install this one while the old one is still installed: your Client ID, secret and Discord login are taken over. Then remove the old plugin.
 
 ### New since the original (2.0.x)
+
+_Setting up the Discord app is explained step by step in the [README](https://github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord#setting-up-the-discord-app)._
 
 **New devices and systems**
 - 🍎 macOS support
