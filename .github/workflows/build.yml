@@ -105,7 +105,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.release_tag || github.ref_name }}
-          target_commitish: ${{ github.ref_name }}
+          target_commitish: ${{ inputs.release_tag && github.ref_name || github.sha }}
           name: ${{ inputs.release_tag || github.ref_name }}
           body_path: .github/release-notes.md
           files: release/com.n3ckarmann.volumemixer.streamDeckPlugin
