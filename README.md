@@ -85,13 +85,19 @@ To get an installable `.streamDeckPlugin` file in one go: `.\tools\build-windows
 - Texts and translations: [`src/translations.json`](src/translations.json) (button titles and settings) and `dist/<language>.json` (action names in the Stream Deck app)
 - Icons: SVG sources in [`etc/icons`](etc/icons)
 
+## How this fork is made 🤖
+
+Full transparency: this fork is **vibe-coded**. The maintainer describes what should change and tests everything on real hardware, while the code, icons and translations are written by an AI coding assistant ([Claude Code](https://claude.com/claude-code)). Every change is still reviewed, built and tested before a release, and the whole history is public in the commits.
+
+If you find something odd, please open an [issue](../../issues) – bug reports are very welcome.
+
 ## Credits
 
 This plugin was created by **[Danol (Daniel Čejchan)](https://github.com/CZDanol)** – the [original project](https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2), including the [QtStreamDeck2](https://github.com/CZDanol/QtStreamDeck2) and [QtDiscordIPC](https://github.com/CZDanol/QtDiscordIPC) libraries it is built on, is his work. Since he ended development in 2024, the plugin is continued here as a community fork. Thank you, Danol!
 
 - **Danol** – original author
 - **[Krabs](https://github.com/krabs-github)** – profiles for the XL and testing of the original plugin
-- **n3ckarmann** – maintainer of this fork
+- **n3ckarmann** – maintainer of this fork (vibe-coded with Claude Code)
 - Built with [Qt 6](https://www.qt.io/) (LGPLv3)
 
 Icons and app icon were made for this fork and are part of the project (GPLv3). This project is not affiliated with Discord; "for Discord" only describes what it works with.

@@ -72,13 +72,19 @@ Leg eine leere Datei `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ck
 
 Siehe [englische Anleitung](README.md#building-from-source).
 
+## Wie dieser Fork entsteht 🤖
+
+Ganz offen: Dieser Fork wird **gevibecodet**. Der Maintainer beschreibt, was sich ändern soll, und testet alles auf echter Hardware. Code, Icons und Übersetzungen schreibt ein KI-Coding-Assistent ([Claude Code](https://claude.com/claude-code)). Jede Änderung wird trotzdem vor einem Release gebaut und getestet, und die komplette Historie ist in den Commits öffentlich.
+
+Wenn dir etwas komisch vorkommt, mach gern ein [Issue](../../issues) auf. Fehlermeldungen sind sehr willkommen.
+
 ## Credits
 
 Erfunden und gebaut hat dieses Plugin **[Danol (Daniel Čejchan)](https://github.com/CZDanol)**. Das [Original-Projekt](https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2) samt den Bibliotheken [QtStreamDeck2](https://github.com/CZDanol/QtStreamDeck2) und [QtDiscordIPC](https://github.com/CZDanol/QtDiscordIPC) ist seine Arbeit. Seit er die Entwicklung 2024 beendet hat, wird das Plugin hier als Community-Fork weitergeführt. Danke, Danol!
 
 - **Danol** – ursprünglicher Autor
 - **[Krabs](https://github.com/krabs-github)** – Profile für das XL und Tests des Original-Plugins
-- **n3ckarmann** – Maintainer dieses Forks
+- **n3ckarmann** – Maintainer dieses Forks (gevibecodet mit Claude Code)
 - Gebaut mit [Qt 6](https://www.qt.io/) (LGPLv3)
 
 Icons und App-Icon wurden für diesen Fork neu gestaltet und sind Teil des Projekts (GPLv3).
