@@ -24,15 +24,22 @@ DVMPlugin::DVMPlugin() {
 	connect(this, &QStreamDeckPlugin::initialized, this, &DVMPlugin::onInitialized);
 	connect(this, &QStreamDeckPlugin::eventReceived, this, &DVMPlugin::onStreamDeckEventReceived);
 
+	// Client ID/secret might have been just filled in -> try connecting again
+	connect(this, &QStreamDeckPlugin::globalSettingsChanged, this, [this] {
+		if(!discord.isConnected() && !discord.isConnecting())
+			discordReconnectTimer_.start();
+	});
+
 	connect(&discord, &QDiscord::messageReceived, this, &DVMPlugin::onDiscordMessageReceived);
 	connect(&discord, &QDiscord::avatarReady, this, &DVMPlugin::buttonsUpdateRequested);
+	connect(&discord, &QDiscord::connectionStateChanged, this, &DVMPlugin::buttonsUpdateRequested);
 	connect(&discord, &QDiscord::disconnected, this, [this] {
 		currentVoiceChannelID.clear();
 		voiceChannelMembers.clear();
 		speakingVoiceChannelMembers.clear();
 		voiceChannelMemberIxOffset = 0;
 
-		discordReconnectTimer_.start();
+		discordReconnectTimer_.start(minReconnectInterval);
 
 		emit buttonsUpdateRequested();
 	});
@@ -40,7 +47,7 @@ DVMPlugin::DVMPlugin() {
 	discordConnectTimeoutTimer_.setSingleShot(true);
 	discordConnectTimeoutTimer_.setInterval(2000);
 
-	discordReconnectTimer_.setInterval(2500);
+	discordReconnectTimer_.setInterval(minReconnectInterval);
 	discordReconnectTimer_.callOnTimeout(this, &DVMPlugin::connectToDiscord);
 	discordReconnectTimer_.start();
 }
@@ -50,8 +57,12 @@ DVMPlugin::~DVMPlugin() {
 }
 
 void DVMPlugin::connectToDiscord() {
-	if(discord.isConnected())
+	// The connection attempt processes events, so this can get called again from the timer or a button press meanwhile
+	if(discord.isConnected() || discord.isConnecting())
 		return;
+
+	discordReconnectTimer_.stop();
+	emit buttonsUpdateRequested();
 
 	if(discord.connect(globalSetting("client_id").toString(), globalSetting("client_secret").toString())) {
 		// Subscribe to voice channel select event
@@ -70,10 +81,17 @@ void DVMPlugin::connectToDiscord() {
 
 		updateChannelMembersData();
 		discordReconnectTimer_.stop();
+		discordReconnectTimer_.setInterval(minReconnectInterval);
 	}
 	else {
 		emit buttonsUpdateRequested();
-		discordReconnectTimer_.start();
+
+		// Retrying configuration/authorization errors automatically would just keep opening the Discord authorization dialog.
+		// Those are retried when the user presses a button instead (see onStreamDeckEventReceived).
+		static const QSet<QString> noAutoRetryErrors{"ERR 0", "ERR 2", "ERR 4", "ERR 5", "ERR 6", "ERR 7"};
+		// Back off while Discord is not running, so we don't hammer the pipes all the time
+		if(!noAutoRetryErrors.contains(discord.connectionError()))
+			discordReconnectTimer_.start(qMin(discordReconnectTimer_.interval() * 2, maxReconnectInterval));
 	}
 }
 

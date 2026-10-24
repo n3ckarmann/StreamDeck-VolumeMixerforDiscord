@@ -55,6 +55,10 @@ private slots:
 	void onStreamDeckEventReceived(const QStreamDeckEvent &e);
 
 private:
+	static constexpr int minReconnectInterval = 2500;
+	static constexpr int maxReconnectInterval = 30000;
+
+private:
 	QTimer discordConnectTimeoutTimer_;
 	QTimer discordReconnectTimer_;
 

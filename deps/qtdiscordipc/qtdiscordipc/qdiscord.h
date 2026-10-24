@@ -8,6 +8,8 @@
 #include <QImage>
 #include <QCache>
 #include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 #include "qdiscordmessage.h"
 #include "qdiscordreply.h"
@@ -62,7 +64,9 @@ public:
 
 public:
 	/**
-	 * Tries to connext to the Discord. Returns true if successfull (this function is blocking)
+	 * Tries to connext to the Discord. Returns true if successfull.
+	 * The function does not return until finished, but it processes events while waiting.
+	 * Calls made while a connection attempt is already running return false immediately.
 	 */
 	bool connect(const QString &clientID, const QString &clientSecret);
 
@@ -70,6 +74,10 @@ public:
 
 	inline bool isConnected() const {
 		return isConnected_;
+	}
+
+	inline bool isConnecting() const {
+		return connecting_;
 	}
 
 	inline const QString &connectionError() const {
@@ -105,11 +113,17 @@ signals:
 
 	void connected();
 
+	/// Emitted when connectionError() changes during/after a connection attempt
+	void connectionStateChanged();
+
 	void disconnected();
 
 private:
 	/// Blockingly reads a single message.
-	QDiscordMessage readMessage();
+	QDiscordMessage readMessage(int timeoutMs = handshakeTimeout);
+
+	/// Posts an OAuth2 token request, returns the parsed JSON response in result
+	QNetworkReply::NetworkError requestToken(const QUrlQuery &query, QJsonObject &result);
 
 	void sendMessage(const QJsonObject &packet, int opCode = 1);
 
@@ -120,14 +134,26 @@ private:
 
 private:
 	/// Blocking waits until given amount of bytes is available
-	QByteArray blockingReadBytes(int bytes);
+	QByteArray blockingReadBytes(int bytes, int timeoutMs);
 
 	/// Non-blocking processes received messsages
 	void readAndProcessMessages();
 
 private:
+	static constexpr int handshakeTimeout = 5000;
+	/// Time the user has to confirm the authorization dialog in Discord
+	static constexpr int authorizeTimeout = 120000;
+	static constexpr int httpTimeout = 15000;
+	static constexpr const char *tokenUrl = "https://discord.com/api/oauth2/token";
+	/// Has to match a redirect configured in the Discord app's OAuth2 settings
+	static constexpr const char *redirectUri = "http://localhost:1337/callback";
+
+	static QString oauthFilePath();
+
+private:
 	QLocalSocket socket_;
 	bool isConnected_ = false;
+	bool connecting_ = false;
 	QString connectionError_;
 	QString userID_;
 	QString cdn_;
