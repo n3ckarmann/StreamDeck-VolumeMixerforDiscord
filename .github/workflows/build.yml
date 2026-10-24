@@ -78,6 +78,8 @@ jobs:
     needs: [windows, macos]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/download-artifact@v4
         with:
           path: parts
@@ -104,5 +106,7 @@ jobs:
         with:
           tag_name: ${{ inputs.release_tag || github.ref_name }}
           target_commitish: ${{ github.sha }}
+          name: ${{ inputs.release_tag || github.ref_name }}
+          body_path: .github/release-notes.md
           files: release/com.n3ckarmann.volumemixer.streamDeckPlugin
           draft: true
