@@ -8,6 +8,8 @@ Action_Microphone::Action_Microphone() {
 }
 
 void Action_Microphone::update() {
+	updateConnectionBadge({"mic_on", "mic_off"});
+
 	if(const int newState = plugin()->isMicrophoneMuted; state_ != newState) {
 		state_ = newState;
 		setState(newState);

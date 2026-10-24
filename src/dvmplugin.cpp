@@ -91,8 +91,9 @@ void DVMPlugin::connectToDiscord() {
 		// Those are retried when the user presses a button instead (see onStreamDeckEventReceived).
 		static const QSet<QString> noAutoRetryErrors{"ERR 0", "ERR 2", "ERR 4", "ERR 5", "ERR 6", "ERR 7"};
 		// Back off while Discord is not running, so we don't hammer the pipes all the time
-		if(!noAutoRetryErrors.contains(discord.connectionError()))
-			discordReconnectTimer_.start(qMin(discordReconnectTimer_.interval() * 2, maxReconnectInterval));
+		const QString err = discord.connectionError();
+		if(!noAutoRetryErrors.contains(err))
+			discordReconnectTimer_.start(qMin(discordReconnectTimer_.interval() * 2, err == "ERR 1" ? maxReconnectIntervalNoDiscord : maxReconnectInterval));
 	}
 }
 

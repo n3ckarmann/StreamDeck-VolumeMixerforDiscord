@@ -60,6 +60,8 @@ Treat the Client Secret like a password and never share it.
 | `WAITING FOR INTERNET` | Discord's servers can't be reached (e.g. right after booting) | Nothing – it reconnects automatically |
 | `NOBODY IN VOICE` | You are alone or not in a voice channel | Join a voice channel |
 
+The **Discord Volume Mixer**, **Microphone** and **Deafen** keys are dimmed while the plugin is not connected and show a short status: red `DISCORD OFF` when Discord is closed, yellow while connecting or waiting for you to authorize. As soon as you start Discord, the plugin connects within a few seconds.
+
 Also make sure Discord and the Stream Deck software both run **without** administrator rights.
 
 ### Sending a log

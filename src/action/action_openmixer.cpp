@@ -6,6 +6,10 @@ Action_OpenMixer::Action_OpenMixer() {
 	connect(this, &QStreamDeckAction::keyDown, this, &Action_OpenMixer::onPressed);
 }
 
+void Action_OpenMixer::update() {
+	updateConnectionBadge({"app"});
+}
+
 void Action_OpenMixer::onPressed() {
 	using DT = QStreamDeckDevice::DeviceType;
 	static const QMap<int, QString> profileNameByDeviceType{

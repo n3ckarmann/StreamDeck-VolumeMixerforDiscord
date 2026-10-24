@@ -520,6 +520,71 @@
    "ja": "切断\nされました",
    "ko": "연결\n끊김",
    "zh_CN": "已断开"
+  },
+  "badge.offline": {
+   "en": "DISCORD OFF",
+   "de": "DISCORD AUS",
+   "es": "DISCORD CERRADO",
+   "fr": "DISCORD FERMÉ",
+   "it": "DISCORD CHIUSO",
+   "pt": "DISCORD FECHADO",
+   "pl": "DISCORD WYŁ.",
+   "nl": "DISCORD UIT",
+   "ja": "Discord 未起動",
+   "ko": "Discord 꺼짐",
+   "zh_CN": "Discord 未运行"
+  },
+  "badge.connecting": {
+   "en": "CONNECTING…",
+   "de": "VERBINDE…",
+   "es": "CONECTANDO…",
+   "fr": "CONNEXION…",
+   "it": "CONNESSIONE…",
+   "pt": "CONECTANDO…",
+   "pl": "ŁĄCZENIE…",
+   "nl": "VERBINDEN…",
+   "ja": "接続中…",
+   "ko": "연결 중…",
+   "zh_CN": "正在连接…"
+  },
+  "badge.authorize": {
+   "en": "AUTHORIZE",
+   "de": "FREIGEBEN",
+   "es": "AUTORIZAR",
+   "fr": "AUTORISER",
+   "it": "AUTORIZZA",
+   "pt": "AUTORIZAR",
+   "pl": "ZEZWÓL",
+   "nl": "AUTORISEER",
+   "ja": "承認待ち",
+   "ko": "승인 필요",
+   "zh_CN": "需要授权"
+  },
+  "badge.noInternet": {
+   "en": "NO INTERNET",
+   "de": "KEIN INTERNET",
+   "es": "SIN INTERNET",
+   "fr": "PAS D'INTERNET",
+   "it": "NO INTERNET",
+   "pt": "SEM INTERNET",
+   "pl": "BRAK SIECI",
+   "nl": "GEEN INTERNET",
+   "ja": "ネット未接続",
+   "ko": "인터넷 없음",
+   "zh_CN": "无网络"
+  },
+  "badge.notConnected": {
+   "en": "NOT CONNECTED",
+   "de": "NICHT VERBUNDEN",
+   "es": "SIN CONEXIÓN",
+   "fr": "NON CONNECTÉ",
+   "it": "NON CONNESSO",
+   "pt": "SEM CONEXÃO",
+   "pl": "BRAK POŁĄCZENIA",
+   "nl": "NIET VERBONDEN",
+   "ja": "未接続",
+   "ko": "연결 안 됨",
+   "zh_CN": "未连接"
   }
  }
 }

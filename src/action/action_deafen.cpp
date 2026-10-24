@@ -8,6 +8,8 @@ Action_Deafen::Action_Deafen() {
 }
 
 void Action_Deafen::update() {
+	updateConnectionBadge({"audio_on", "audio_off"});
+
 	if(const int newState = plugin()->isDeafened; state_ != newState) {
 		state_ = newState;
 		setState(newState);

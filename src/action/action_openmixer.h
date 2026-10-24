@@ -8,6 +8,9 @@ Q_OBJECT
 public:
 	Action_OpenMixer();
 
+public:
+	virtual void update() override;
+
 private slots:
 	void onPressed();
 

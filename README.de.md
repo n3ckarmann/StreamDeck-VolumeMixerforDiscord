@@ -60,6 +60,8 @@ Behandle das Client Secret wie ein Passwort und gib es nicht weiter.
 | `WARTE AUF INTERNET` | Discord-Server nicht erreichbar (z. B. direkt nach dem Hochfahren) | Nichts, es verbindet sich automatisch |
 | `NIEMAND IM KANAL` | Du bist allein oder in keinem Sprachkanal | Einem Sprachkanal beitreten |
 
+Die Tasten **Discord Volume Mixer**, **Mikrofon** und **Ton aus** werden abgedunkelt, solange das Plugin nicht verbunden ist, und zeigen einen kurzen Status: rot `DISCORD AUS`, wenn Discord geschlossen ist, gelb beim Verbinden oder wenn du noch freigeben musst. Sobald du Discord startest, verbindet sich das Plugin innerhalb weniger Sekunden.
+
 Achte außerdem darauf, dass Discord und die Stream-Deck-Software **ohne** Administratorrechte laufen.
 
 ### Log senden
