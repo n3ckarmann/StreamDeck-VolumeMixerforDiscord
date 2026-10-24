@@ -37,11 +37,21 @@ Invoke-Step "Configure ($generator)" { cmake -S $root -B $buildDir -G $generator
 Invoke-Step "Build" { cmake --build $buildDir --config Release --parallel }
 Invoke-Step "Install + windeployqt" { cmake --install $buildDir --config Release }
 
-# Stream Deck expects a zip with the .sdPlugin folder at its root
+# Stream Deck expects a zip with the .sdPlugin folder at its root.
+# Compress-Archive (Windows PowerShell 5) writes backslashes into the entry names, so the zip is built by hand.
 New-Item -ItemType Directory -Path $releaseDir | Out-Null
-$zip = Join-Path $releaseDir "cz.danol.discordmixer.zip"
-Compress-Archive -Path $pluginDir -DestinationPath $zip
 $target = Join-Path $releaseDir "cz.danol.discordmixer.streamDeckPlugin"
-Move-Item -LiteralPath $zip -Destination $target
+Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
+$archive = [System.IO.Compression.ZipFile]::Open($target, [System.IO.Compression.ZipArchiveMode]::Create)
+try {
+    $baseDir = Split-Path -Parent $pluginDir
+    foreach ($file in Get-ChildItem -LiteralPath $pluginDir -Recurse -File) {
+        $entryName = $file.FullName.Substring($baseDir.Length + 1).Replace('\', '/')
+        [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $file.FullName, $entryName) | Out-Null
+    }
+}
+finally {
+    $archive.Dispose()
+}
 
 Write-Host "Done: $target" -ForegroundColor Green
