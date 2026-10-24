@@ -149,7 +149,7 @@ private:
 	static constexpr const char *redirectUri = "http://localhost:1337/callback";
 
 	static QString oauthFilePath();
-	static QString ipcPipeName(int index);
+	static QStringList ipcPipeNames();
 
 private:
 	QLocalSocket socket_;

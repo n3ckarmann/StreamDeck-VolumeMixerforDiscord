@@ -13,6 +13,11 @@
 #include <QRegularExpression>
 #include <QSaveFile>
 #include <QDir>
+#include <QFileInfo>
+#ifdef Q_OS_UNIX
+#include <unistd.h>
+#include <climits>
+#endif
 #include <QCoreApplication>
 #include <QTimer>
 
@@ -82,10 +87,10 @@ bool QDiscord::connect(const QString &clientID, const QString &clientSecret) {
         }
 
         // start connecting
-        for(int i = 0; i < 10; i++) {
+        for(const QString &pipeName: ipcPipeNames()) {
             socket_.abort();
-            socket_.connectToServer(ipcPipeName(i));
-            qDebug() << "Trying to connect to Discord (" << i << ")";
+            socket_.connectToServer(pipeName);
+            qDebug() << "Trying to connect to Discord (" << pipeName << ")";
 
             if(socket_.waitForConnected(3000))
                 break;
@@ -299,20 +304,37 @@ QString QDiscord::oauthFilePath() {
 #endif
 }
 
-QString QDiscord::ipcPipeName(int index) {
-    const QString name = QStringLiteral("discord-ipc-%1").arg(index);
+QStringList QDiscord::ipcPipeNames() {
+    QStringList result;
 #ifdef Q_OS_WIN
-    // Named pipe \\.\pipe\discord-ipc-N
-    return name;
+    // Named pipes \\.\pipe\discord-ipc-N
+    for(int i = 0; i < 10; i++)
+        result << QStringLiteral("discord-ipc-%1").arg(i);
 #else
-    // Unix socket in the first temp directory that is set, same lookup order as Discord's own RPC library
-    for(const char *var: {"XDG_RUNTIME_DIR", "TMPDIR", "TMP", "TEMP"}) {
-        const QString dir = qEnvironmentVariable(var);
-        if(!dir.isEmpty())
-            return QDir(dir).absoluteFilePath(name);
-    }
-    return QStringLiteral("/tmp/") + name;
+    // Unix sockets <temp dir>/discord-ipc-N. Discord puts them into its own temp dir, which the environment of the plugin
+    // doesn't necessarily point to (Stream Deck may start it without TMPDIR), so look in every candidate.
+    QStringList dirs;
+#ifdef Q_OS_MACOS
+    char userTempDir[PATH_MAX];
+    if(confstr(_CS_DARWIN_USER_TEMP_DIR, userTempDir, sizeof(userTempDir)) > 0)
+        dirs << QString::fromLocal8Bit(userTempDir);
 #endif
+    for(const char *var: {"XDG_RUNTIME_DIR", "TMPDIR", "TMP", "TEMP"}) {
+        if(const QString dir = qEnvironmentVariable(var); !dir.isEmpty())
+            dirs << dir;
+    }
+    dirs << QStringLiteral("/tmp");
+
+    for(const QString &dir: dirs) {
+        for(int i = 0; i < 10; i++) {
+            const QString path = QDir::cleanPath(QDir(dir).absoluteFilePath(QStringLiteral("discord-ipc-%1").arg(i)));
+            if(QFileInfo::exists(path) && !result.contains(path))
+                result << path;
+        }
+    }
+    qDebug() << "Discord IPC sockets found:" << result << "searched in" << dirs;
+#endif
+    return result;
 }
 
 QNetworkReply::NetworkError QDiscord::requestToken(const QUrlQuery &query, QJsonObject &result) {

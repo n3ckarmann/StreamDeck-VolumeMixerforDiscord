@@ -7,8 +7,20 @@
 #include <QThread>
 #include <QSslSocket>
 
+/// <plugin>.sdPlugin, the folder with the manifest
+QDir pluginDir() {
+#ifdef Q_OS_MACOS
+	// <plugin>.sdPlugin/bin/<exe>.app/Contents/MacOS/<exe>
+	return QDir(QCoreApplication::applicationDirPath() + "/../../../..");
+#else
+	// <plugin>.sdPlugin/bin/<exe>
+	return QDir(QCoreApplication::applicationDirPath() + "/..");
+#endif
+}
+
 void messageLogger(QtMsgType t, const QMessageLogContext &, const QString &msg) {
-	static QFile lf("log.txt"), clf("clog.txt");
+	// Next to the manifest; the working directory Stream Deck starts the plugin in differs between Windows and macOS
+	static QFile lf(pluginDir().absoluteFilePath("log.txt")), clf(pluginDir().absoluteFilePath("clog.txt"));
 
 	// Only create log files if they already exist
 	if(!lf.isOpen() && lf.exists())
@@ -42,13 +54,7 @@ void migrateFromOldPlugin(const QString &pluginUID) {
 		settings.setValue("globalSettings", oldSettings.value("globalSettings"));
 	}
 
-#ifdef Q_OS_MACOS
-	// <plugins dir>/<plugin>.sdPlugin/bin/<exe>.app/Contents/MacOS/<exe>
-	const QDir pluginsDir(QCoreApplication::applicationDirPath() + "/../../../../..");
-#else
-	// <plugins dir>/<plugin>.sdPlugin/bin/<exe>
-	const QDir pluginsDir(QCoreApplication::applicationDirPath() + "/../..");
-#endif
+	const QDir pluginsDir(pluginDir().absoluteFilePath(".."));
 	const QString oauthFile = pluginsDir.absoluteFilePath(pluginUID + ".sdPlugin/discordOauth.json");
 	const QString oldOauthFile = pluginsDir.absoluteFilePath(oldPluginUID + ".sdPlugin/discordOauth.json");
 	if(!QFile::exists(oauthFile) && QFile::exists(oldOauthFile) && QFile::copy(oldOauthFile, oauthFile))
