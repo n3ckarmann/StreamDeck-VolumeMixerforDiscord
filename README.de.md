@@ -36,16 +36,30 @@
 
 Discord erlaubt nur selbst registrierten Apps, deinen Sprachchat zu steuern. Deshalb braucht jede Person ihre eigene (kostenlose) Discord-App:
 
-1. Öffne das [Discord Developer Portal](https://discord.com/developers/applications) mit **demselben Konto, das du in der Discord-App nutzt**, und klicke auf **New Application**.
-   - Der Name ist egal, er darf aber **nicht das Wort „Discord“ enthalten** (das lehnt Discord ab).
-2. Füge unter **OAuth2** die Weiterleitung `http://localhost:1337/callback` hinzu und klicke auf **Save Changes**.
-3. Kopiere die **Client ID** und das **Client Secret** (siehst du nur *Reset Secret*, klick darauf).
-4. Füge beides in den Einstellungen der Volume-Mixer-Taste ein. Die Werte sind verdeckt, mit dem 👁 Auge kannst du sie anzeigen.
-5. Drück die Taste und klicke im Discord-Fenster auf **Autorisieren**. Fertig!
+1. Öffne das [Discord Developer Portal](https://discord.com/developers/applications) mit **demselben Konto, das du in der Discord-App nutzt**, und geh links auf **Anwendungen**.
 
-Behandle das Client Secret wie ein Passwort und gib es nicht weiter.
+   <img src="etc/setup/1-applications.png" width="200" alt="Anwendungen">
 
-![OAuth2-Einstellungen](etc/oauth.png)
+2. Klicke oben rechts auf **App erstellen**.
+
+   <img src="etc/setup/2-create-app.png" width="150" alt="App erstellen">
+
+3. Gib einen beliebigen Namen ein, setz den Haken bei den Nutzungsbedingungen und klicke auf **Erstellen**.
+   - Der Name darf **nicht das Wort „Discord“ enthalten**, das lehnt Discord ab.
+
+   <img src="etc/setup/3-new-app.png" width="400" alt="Neue Anwendung erstellen">
+
+4. Öffne links **OAuth2**:
+   - Trag unter **Weiterleitungen** `http://localhost:1337/callback` ein und speichere die Änderungen.
+   - Kopiere die **Client-ID**.
+   - Der **geheime Client-Schlüssel** ist versteckt: Klick auf **Geheimen Schlüssel zurücksetzen** und kopiere den neuen Schlüssel sofort (Discord zeigt ihn nur einmal an).
+
+   <img src="etc/setup/4-oauth2.png" alt="OAuth2-Einstellungen">
+
+5. Füge beides in den Einstellungen der Volume-Mixer-Taste ein. Die Werte sind verdeckt, mit dem 👁 Auge kannst du sie anzeigen.
+6. Drück die Taste und klicke im Discord-Fenster auf **Autorisieren**. Fertig!
+
+Behandle den geheimen Schlüssel wie ein Passwort und gib ihn nicht weiter.
 
 ## Was die Tasten anzeigen
 

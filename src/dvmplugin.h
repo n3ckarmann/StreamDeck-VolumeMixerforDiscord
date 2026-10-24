@@ -28,7 +28,7 @@ public:
 
 public:
 	static constexpr const char *originalProjectUrl = "https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2";
-	static constexpr const char *setupGuideUrl = "https://github.com/CZDanol/StreamDeck-DiscordVolumeMixer2#configuration";
+	static constexpr const char *setupGuideUrl = "https://github.com/n3ckarmann/StreamDeck-VolumeMixerforDiscord#setting-up-the-discord-app";
 
 public:
 	/// Processes voice state update for the user itself

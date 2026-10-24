@@ -34,18 +34,32 @@ English · [Deutsch](README.de.md)
 
 ## Setting up the Discord app
 
-Discord only lets apps that you registered yourself control your voice chat, so every user needs their own (free) Discord app:
+Discord only lets apps that you registered yourself control your voice chat, so every user needs their own (free) Discord app. The screenshots show the German portal, the English names are in brackets.
 
-1. Open the [Discord Developer Portal](https://discord.com/developers/applications) with **the same account you use in the Discord app** and click **New Application**.
-   - Pick any name, but **don't use the word "Discord"** in it (Discord rejects that).
-2. Under **OAuth2**, add the redirect `http://localhost:1337/callback` and click **Save Changes**.
-3. Copy the **Client ID** and the **Client Secret** (click *Reset Secret* if you only see that button).
-4. Paste both into the settings of the Volume Mixer key on your Stream Deck. They are hidden – click the 👁 eye to show them.
-5. Press the key and click **Authorize** in the window Discord shows you. Done!
+1. Open the [Discord Developer Portal](https://discord.com/developers/applications) with **the same account you use in the Discord app** and go to **Applications** (*Anwendungen*) on the left.
+
+   <img src="etc/setup/1-applications.png" width="200" alt="Applications">
+
+2. Click **New Application** (*App erstellen*) at the top right.
+
+   <img src="etc/setup/2-create-app.png" width="150" alt="New Application">
+
+3. Enter any name, tick the box to accept Discord's developer terms and click **Create** (*Erstellen*).
+   - **Don't use the word "Discord"** in the name, Discord rejects that.
+
+   <img src="etc/setup/3-new-app.png" width="400" alt="Create a new application">
+
+4. Open **OAuth2** on the left:
+   - Under **Redirects** (*Weiterleitungen*) add `http://localhost:1337/callback` and save the changes.
+   - Copy the **Client ID**.
+   - The **Client Secret** is hidden: click **Reset Secret** (*Geheimen Schlüssel zurücksetzen*) and copy the new secret right away (Discord shows it only once).
+
+   <img src="etc/setup/4-oauth2.png" alt="OAuth2 settings">
+
+5. Paste both into the settings of the Volume Mixer key on your Stream Deck. They are hidden – click the 👁 eye to show them.
+6. Press the key and click **Authorize** in the window Discord shows you. Done!
 
 Treat the Client Secret like a password and never share it.
-
-![OAuth2 settings](etc/oauth.png)
 
 ## What the keys tell you
 
