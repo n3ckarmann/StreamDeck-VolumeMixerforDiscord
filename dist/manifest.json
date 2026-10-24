@@ -183,6 +183,21 @@
       "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
       "UUID": "com.n3ckarmann.volumemixer.deafen",
       "DisableAutomaticStates": true
+    },
+    {
+      "Icon": "icons/mic_on",
+      "Name": "Who is speaking",
+      "States": [
+        {
+          "Image": "icons/mic_on"
+        }
+      ],
+      "Controllers": [
+        "Neo"
+      ],
+      "Tooltip": "Shows on the infobar of the Stream Deck Neo who in your voice channel is speaking",
+      "PropertyInspectorPath": "qtstreamdeck2/propertyinspector.html",
+      "UUID": "com.n3ckarmann.volumemixer.speakinginfo"
     }
   ],
   "SDKVersion": 2,
@@ -226,6 +241,11 @@
       "Name": "Volume Mixer for Discord Neo",
       "DeviceType": 9,
       "ReadOnly": false
+    },
+    {
+      "Name": "Volume Mixer for Discord+ XL",
+      "DeviceType": 13,
+      "ReadOnly": false
     }
   ],
   "OS": [
@@ -239,6 +259,6 @@
     }
   ],
   "Software": {
-    "MinimumVersion": "6.4"
+    "MinimumVersion": "7.6"
   }
 }

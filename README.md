@@ -18,7 +18,8 @@ English · [Deutsch](README.de.md)
 - 🔇 **Mute anyone** with a single press
 - 🟢 **See who is speaking** – the key lights up while someone talks
 - 🎙️ **Your own microphone and deafen** on a key
-- 🧩 **Works on all decks** – Standard, Mini, XL, Mobile and Stream Deck +
+- 🧩 **Works on all decks** – Standard, Mini, XL, Mobile, Neo, Stream Deck + and Stream Deck + XL, on Windows and macOS
+- ℹ️ **Neo infobar** shows who is speaking right now
 - 🌍 **Available in** English, Deutsch, Español, Français, Italiano, Português, Polski, Nederlands, 日本語, 한국어 and 简体中文
 
 ![Screenshot](etc/sshot.png)
@@ -66,7 +67,7 @@ Also make sure Discord and the Stream Deck software both run **without** adminis
 
 ### Sending a log
 
-Create an empty file `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ckarmann.volumemixer.sdPlugin\`, reproduce the problem and attach the file to an [issue](../../issues). Delete it afterwards, it keeps growing.
+Create an empty file `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ckarmann.volumemixer.sdPlugin\` (macOS: `~/Library/Application Support/com.elgato.StreamDeck/Plugins/com.n3ckarmann.volumemixer.sdPlugin/`), reproduce the problem and attach the file to an [issue](../../issues). Delete it afterwards, it keeps growing.
 
 ## Building from source
 
@@ -81,6 +82,8 @@ cmake --install build      # copies everything to bin\Release\com.n3ckarmann.vol
 With `-DBUILD_IN_STREAMDECK_PLUGINS_DIR=ON` the plugin is built straight into your Stream Deck plugins folder.
 
 To get an installable `.streamDeckPlugin` file in one go: `.\tools\build-windows.ps1 -QtDir C:\Qt\6.8.3\mingw_64 -MinGWDir C:\Qt\Tools\mingw1310_64`
+
+On macOS (12+, Xcode command line tools, Ninja, Qt 6.8 for macOS) `./tools/build-macos.sh ~/Qt/6.8.3/macos` builds a universal binary (Apple Silicon and Intel) and packages it.
 
 - Texts and translations: [`src/translations.json`](src/translations.json) (button titles and settings) and `dist/<language>.json` (action names in the Stream Deck app)
 - Icons: SVG sources in [`etc/icons`](etc/icons)

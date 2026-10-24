@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "拒听",
     "Tooltip": "为你关闭/开启所有 Discord 声音"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "谁在说话",
+    "Tooltip": "在 Stream Deck Neo 的信息栏上显示语音频道中正在说话的人"
   }
 }

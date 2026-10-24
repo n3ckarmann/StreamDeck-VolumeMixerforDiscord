@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Wyłącz dźwięk",
     "Tooltip": "Wyłącza/włącza cały dźwięk Discorda"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "Kto mówi",
+    "Tooltip": "Pokazuje na pasku informacji Stream Deck Neo, kto mówi na twoim kanale głosowym"
   }
 }

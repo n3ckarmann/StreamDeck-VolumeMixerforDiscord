@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Mettre en sourdine",
     "Tooltip": "Coupe/réactive tout le son de Discord pour vous"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "Qui parle",
+    "Tooltip": "Affiche sur la barre d'infos du Stream Deck Neo qui parle dans ton salon vocal"
   }
 }

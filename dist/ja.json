@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "スピーカーミュート",
     "Tooltip": "Discord の音声をすべてミュート/解除します"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "話している人",
+    "Tooltip": "Stream Deck Neo のインフォバーに、ボイスチャンネルで話している人を表示します"
   }
 }

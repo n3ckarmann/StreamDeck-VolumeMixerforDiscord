@@ -18,7 +18,8 @@
 - 🔇 **Jede Person stummschalten** mit einem Tastendruck
 - 🟢 **Sehen, wer spricht** – die Taste leuchtet, solange jemand redet
 - 🎙️ **Eigenes Mikrofon und Ton aus** auf einer Taste
-- 🧩 **Für alle Decks** – Standard, Mini, XL, Mobile und Stream Deck +
+- 🧩 **Für alle Decks** – Standard, Mini, XL, Mobile, Neo, Stream Deck + und Stream Deck + XL, unter Windows und macOS
+- ℹ️ **Neo-Infobar** zeigt, wer gerade spricht
 - 🌍 **Verfügbar auf** Englisch, Deutsch, Spanisch, Französisch, Italienisch, Portugiesisch, Polnisch, Niederländisch, Japanisch, Koreanisch und Chinesisch
 
 ![Screenshot](etc/sshot.png)
@@ -66,7 +67,7 @@ Achte außerdem darauf, dass Discord und die Stream-Deck-Software **ohne** Admin
 
 ### Log senden
 
-Leg eine leere Datei `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ckarmann.volumemixer.sdPlugin\` an, wiederhole das Problem und hänge die Datei an ein [Issue](../../issues) an. Lösch sie danach wieder, sie wächst sonst immer weiter.
+Leg eine leere Datei `clog.txt` in `%appdata%\Elgato\StreamDeck\Plugins\com.n3ckarmann.volumemixer.sdPlugin\` an (macOS: `~/Library/Application Support/com.elgato.StreamDeck/Plugins/com.n3ckarmann.volumemixer.sdPlugin/`), wiederhole das Problem und hänge die Datei an ein [Issue](../../issues) an. Lösch sie danach wieder, sie wächst sonst immer weiter.
 
 ## Selbst bauen
 

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+  "id": "speaking",
+  "controller": "Neo",
+  "items": [
+    {
+      "key": "icon",
+      "type": "pixmap",
+      "rect": [8, 9, 32, 32]
+    },
+    {
+      "key": "title",
+      "type": "text",
+      "rect": [48, 5, 176, 16],
+      "font": {"size": 11, "weight": 600},
+      "color": "#9aa0a6",
+      "alignment": "left"
+    },
+    {
+      "key": "value",
+      "type": "text",
+      "rect": [48, 21, 176, 24],
+      "font": {"size": 16, "weight": 600},
+      "alignment": "left",
+      "text-overflow": "ellipsis"
+    }
+  ]
+}

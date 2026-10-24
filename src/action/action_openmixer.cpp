@@ -19,6 +19,7 @@ void Action_OpenMixer::onPressed() {
 		{+DT::streamDeckMobile, "Volume Mixer for Discord"},
 		{+DT::streamDeckPlus,   "Volume Mixer for Discord+"},
 		{+DT::streamDeckNeo,    "Volume Mixer for Discord Neo"},
+		{+DT::streamDeckPlusXL, "Volume Mixer for Discord+ XL"},
 	};
 
 	device()->switchToProfile(profileNameByDeviceType.value(+device()->deviceType(), "Volume Mixer for Discord"));

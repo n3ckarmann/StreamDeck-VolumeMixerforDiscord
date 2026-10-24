@@ -585,6 +585,45 @@
    "ja": "未接続",
    "ko": "연결 안 됨",
    "zh_CN": "未连接"
+  },
+  "infobar.speaking": {
+   "en": "Speaking",
+   "de": "Spricht",
+   "es": "Hablando",
+   "fr": "Parle",
+   "it": "Parla",
+   "pt": "Falando",
+   "pl": "Mówi",
+   "nl": "Praat",
+   "ja": "発言中",
+   "ko": "말하는 중",
+   "zh_CN": "正在说话"
+  },
+  "infobar.discord": {
+   "en": "Discord",
+   "de": "Discord",
+   "es": "Discord",
+   "fr": "Discord",
+   "it": "Discord",
+   "pt": "Discord",
+   "pl": "Discord",
+   "nl": "Discord",
+   "ja": "Discord",
+   "ko": "Discord",
+   "zh_CN": "Discord"
+  },
+  "infobar.notInVoice": {
+   "en": "Not in a voice channel",
+   "de": "In keinem Sprachkanal",
+   "es": "No estás en un canal de voz",
+   "fr": "Pas dans un salon vocal",
+   "it": "Non sei in un canale vocale",
+   "pt": "Fora de um canal de voz",
+   "pl": "Brak kanału głosowego",
+   "nl": "Niet in een spraakkanaal",
+   "ja": "ボイスチャンネル未参加",
+   "ko": "음성 채널에 없음",
+   "zh_CN": "未加入语音频道"
   }
  }
 }

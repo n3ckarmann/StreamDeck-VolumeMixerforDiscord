@@ -22,6 +22,10 @@ public:
 		streamDeckPlus,
 		scufController,
 		streamDeckNeo,
+		streamDeckStudio,
+		virtualStreamDeck,
+		galleon100SD,
+		streamDeckPlusXL,
 	};
 
 	Q_ENUM(DeviceType);

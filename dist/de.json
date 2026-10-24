@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Ton aus",
     "Tooltip": "Schaltet den gesamten Discord-Ton für dich aus/an"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "Wer spricht",
+    "Tooltip": "Zeigt auf der Infobar des Stream Deck Neo, wer in deinem Sprachkanal spricht"
   }
 }

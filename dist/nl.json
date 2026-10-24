@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "Geluid uit",
     "Tooltip": "Schakelt al het Discord-geluid voor jou uit/aan"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "Wie praat er",
+    "Tooltip": "Toont op de infobalk van de Stream Deck Neo wie er in je spraakkanaal praat"
   }
 }

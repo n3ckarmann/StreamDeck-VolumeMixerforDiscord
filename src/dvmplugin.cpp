@@ -10,6 +10,7 @@
 #include "action/action_back.h"
 #include "action/action_deafen.h"
 #include "action/action_microphone.h"
+#include "action/action_speakinginfo.h"
 
 DVMPlugin::DVMPlugin() {
 	registerActionType<Action_OpenMixer>("com.n3ckarmann.volumemixer.openmixer");
@@ -21,6 +22,7 @@ DVMPlugin::DVMPlugin() {
 	registerActionType<Action_Back>("com.n3ckarmann.volumemixer.back");
 	registerActionType<Action_Microphone>("com.n3ckarmann.volumemixer.microphone");
 	registerActionType<Action_Deafen>("com.n3ckarmann.volumemixer.deafen");
+	registerActionType<Action_SpeakingInfo>("com.n3ckarmann.volumemixer.speakinginfo");
 
 	connect(this, &QStreamDeckPlugin::initialized, this, &DVMPlugin::onInitialized);
 	connect(this, &QStreamDeckPlugin::eventReceived, this, &DVMPlugin::onStreamDeckEventReceived);

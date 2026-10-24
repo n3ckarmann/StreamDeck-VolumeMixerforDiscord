@@ -37,5 +37,9 @@
   "com.n3ckarmann.volumemixer.deafen": {
     "Name": "헤드셋 음소거",
     "Tooltip": "Discord 소리를 모두 끄거나 켭니다"
+  },
+  "com.n3ckarmann.volumemixer.speakinginfo": {
+    "Name": "말하는 사람",
+    "Tooltip": "Stream Deck Neo 정보 표시줄에 음성 채널에서 말하는 사람을 표시합니다"
   }
 }
