@@ -32,6 +32,18 @@
 
 > **Du kommst von Danols ursprünglichem Discord Volume Mixer?** Installiere dieses Plugin, **bevor** du das alte entfernst: Beim ersten Start übernimmt es Client-ID, Secret und Discord-Anmeldung, du musst nichts neu einrichten. Danach das alte Plugin deinstallieren und die Tasten einmal neu aufs Stream Deck ziehen (Stream Deck sieht das als neues Plugin).
 
+### macOS: Plugin wird blockiert
+
+Die macOS-Version ist nicht von Apple signiert und notarisiert (warum, steht unter [Unterstützen](#unterstützen)). Blockiert macOS sie, etwa mit der Meldung, dass Apple sie nicht auf Schadsoftware prüfen kann, oder bleiben die Tasten leer:
+
+1. Öffne **Systemeinstellungen → Datenschutz & Sicherheit**, scrolle nach unten zum Hinweis, dass das Plugin blockiert wurde, und klicke auf **Trotzdem öffnen**. Bestätige mit deinem Passwort oder Touch ID.
+2. Gibt es dort keinen Hinweis, entferne im Terminal die Download-Markierung und starte die Stream-Deck-App neu:
+   ```sh
+   xattr -dr com.apple.quarantine ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/com.n3ckarmann.volumemixer.sdPlugin
+   ```
+
+Die Plugin-Dateien werden ausschließlich von GitHub Actions aus dem Code in diesem Repo gebaut.
+
 ## Discord-App einrichten
 
 Discord erlaubt nur selbst registrierten Apps, deinen Sprachchat zu steuern. Deshalb braucht jede Person ihre eigene (kostenlose) Discord-App:
@@ -92,6 +104,10 @@ Siehe [englische Anleitung](README.md#building-from-source).
 Ganz offen: Dieser Fork wird **gevibecodet**. Der Maintainer beschreibt, was sich ändern soll, und testet alles auf echter Hardware. Code, Icons und Übersetzungen schreibt ein KI-Coding-Assistent ([Claude Code](https://claude.com/claude-code)). Jede Änderung wird trotzdem vor einem Release gebaut und getestet, und die komplette Historie ist in den Commits öffentlich.
 
 Wenn dir etwas komisch vorkommt, mach gern ein [Issue](../../issues) auf. Fehlermeldungen sind sehr willkommen.
+
+## Unterstützen
+
+Damit macOS das Plugin ohne Warnung öffnet, muss es mit einem Apple-Developer-Konto signiert und notarisiert werden. Das kostet 99 € im Jahr. Das Plugin ist kostenlos und ein Hobbyprojekt. Wenn es dir hilft und du meine Arbeit unterstützen möchtest, freue ich mich sehr darüber, und vielleicht reicht es irgendwann für signierte Pakete: [ko-fi.com/n3ckarmann](https://ko-fi.com/n3ckarmann)
 
 ## Credits
 

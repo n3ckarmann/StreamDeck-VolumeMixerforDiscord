@@ -32,6 +32,18 @@ English · [Deutsch](README.de.md)
 
 > **Coming from Danol's original Discord Volume Mixer?** Install this plugin **before** removing the old one: on its first start it takes over your Client ID, secret and Discord login, so you don't have to set anything up again. Then uninstall the old plugin and put the keys on your Stream Deck again (Stream Deck treats this as a new plugin).
 
+### macOS: plugin is blocked
+
+The macOS build is not signed and notarized by Apple (see [Support](#support) for why). If macOS blocks it, for example with a message that Apple cannot check it for malicious software, or the keys stay empty:
+
+1. Open **System Settings → Privacy & Security**, scroll down to the note that the plugin was blocked and click **Open Anyway**, then confirm with your password or Touch ID.
+2. If there is no such note, remove the download marker in Terminal and restart the Stream Deck app:
+   ```sh
+   xattr -dr com.apple.quarantine ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/com.n3ckarmann.volumemixer.sdPlugin
+   ```
+
+The plugin files are built only by GitHub Actions from the code in this repository.
+
 ## Setting up the Discord app
 
 Discord only lets apps that you registered yourself control your voice chat, so every user needs their own (free) Discord app. The screenshots show the German portal, the English names are in brackets.
@@ -107,6 +119,10 @@ On macOS (12+, Xcode command line tools, Ninja, Qt 6.8 for macOS) `./tools/build
 Full transparency: this fork is **vibe-coded**. The maintainer describes what should change and tests everything on real hardware, while the code, icons and translations are written by an AI coding assistant ([Claude Code](https://claude.com/claude-code)). Every change is still reviewed, built and tested before a release, and the whole history is public in the commits.
 
 If you find something odd, please open an [issue](../../issues) – bug reports are very welcome.
+
+## Support
+
+To make macOS open the plugin without any warning, it has to be signed and notarized with an Apple Developer account, which costs 99 € a year. This plugin is free and a hobby project. If it helps you and you'd like to support my work, I'd be really happy, and maybe one day it covers signed packages: [ko-fi.com/n3ckarmann](https://ko-fi.com/n3ckarmann)
 
 ## Credits
 
