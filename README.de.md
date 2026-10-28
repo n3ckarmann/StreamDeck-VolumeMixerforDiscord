@@ -103,7 +103,7 @@ Siehe [englische Anleitung](README.md#building-from-source).
 
 Ganz offen: Dieser Fork wird **gevibecodet**. Der Maintainer beschreibt, was sich ändern soll, und testet alles auf echter Hardware. Code, Icons und Übersetzungen schreibt ein KI-Coding-Assistent ([Claude Code](https://claude.com/claude-code)). Jede Änderung wird trotzdem vor einem Release gebaut und getestet, und die komplette Historie ist in den Commits öffentlich.
 
-Wenn dir etwas komisch vorkommt, mach gern ein [Issue](../../issues) auf. Fehlermeldungen sind sehr willkommen.
+Wenn dir etwas komisch vorkommt, mach gern ein [Issue](../../issues) auf. Fehlermeldungen sind sehr willkommen. Jeder Fehler wird ein Issue und in einer neuen Version behoben, siehe [CONTRIBUTING.md](CONTRIBUTING.md#deutsch).
 
 ## Unterstützen
 

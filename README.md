@@ -118,7 +118,7 @@ On macOS (12+, Xcode command line tools, Ninja, Qt 6.8 for macOS) `./tools/build
 
 Full transparency: this fork is **vibe-coded**. The maintainer describes what should change and tests everything on real hardware, while the code, icons and translations are written by an AI coding assistant ([Claude Code](https://claude.com/claude-code)). Every change is still reviewed, built and tested before a release, and the whole history is public in the commits.
 
-If you find something odd, please open an [issue](../../issues) – bug reports are very welcome.
+If you find something odd, please open an [issue](../../issues) – bug reports are very welcome. Every bug becomes an issue and is fixed in a new version, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Support
 
